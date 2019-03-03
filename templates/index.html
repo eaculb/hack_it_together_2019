@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 <title>Welcome Page</title>
 
 <body>
 	<div class="container-ticket-confirmation">
+		<img class="tblogo" src="../static/trueblue_logo.png" alt="TrueBlue Logo" width="160px" height="45px">
 		<div class="ticket_confirmation">
 			<form action="{{url_for('welcome')}}" method="POST">
 				<b>Ticket Confirmation #:<b><br><input type="text" name="conf"><br><br>
