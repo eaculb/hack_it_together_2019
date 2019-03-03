@@ -1,9 +1,8 @@
 # hack_it_together_2019
-
-- Log into the wifi --> Provide confirmation Number of flight --> Personalized
-website (Redirected) --> Hello, name
-- Scanner with QRCode or Type in flight info confirmation number
-- Scan your boarding pass, will know your Name & Seat Number, etc
+Planning:
+-[x] Log into the wifi
+-[x]Provide confirmation Number of flight
+-[x]Personalized website (Redirected)
 
 # Check-ups:
 - Greet and make it personalized
