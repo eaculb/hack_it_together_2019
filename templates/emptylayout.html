@@ -3,7 +3,12 @@
 <body bgcolor="#003876">
 <h2><font color ="#FFFFFF"><strong>Hello, {{name}}!</strong><h2>
 <h1><font color ="#FFFFFF">You are boarding flight {{flightnumber}}.</h1>
+{% block body %}
+<img src ="url">
 <p>Your Pilot is {{pilotname}}<br />
+  <button type ="button" onclick="About the Pilot">About the Pilot</button>
+  <button type ="button" Onclick="About the Flight Attendees">About the Flight Attendees</button>
+{% endblock %}
 
 </body>
 </html>
