@@ -2,5 +2,10 @@
 
 {% block body %}
 
+{% for staff in staff_list %}
+	<div class="container">
+	{% block staffcard%}{%endblock%}
+	</div>
+{%endfor%}
 
 {% endblock %}
