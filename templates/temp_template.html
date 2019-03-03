@@ -31,6 +31,16 @@ and is wrapped around the whole page content, except for the footer in this exam
   <hr>
 <!-- Body -->
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes style="color:#004990">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
 {%block body%}{%endblock%}
 
 <!-- END w3-content -->
