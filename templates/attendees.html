@@ -8,34 +8,24 @@
 {% for attendent in staff %}
 if(attendent[role] == "Crew Member")
 {
-<!-- Photo of Attendents-->
-<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
 
-<!--Rest of the Information-->
-<h3> Name: {{name}} </h3>
-<br />
-Years of Experience: {{years of experience}} </br>
-<br\> Hometown: {{hometown}} </br>
-<br\> Languages: {{languages}} </br>
-<br/>Fun fact about {{name}}: {{insert fun fact here}}</br>
+
 
 <title>Meet your team!</title>
 	
 <div class = "content">
 	<div class = "container">
+		<!-- Photo of Attendents-->
+		<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
 
-	</div>
-
-	<div class = "container>">
-
-	</div>
-
-	<div class = "container">
-
-	</div>
-
-	<div class = "container>">
-
+		<!--Rest of the Information-->
+		<ul> Name: {{name}} </ul>
+		<ul> Role: {{role}} </ul>
+		<ul> Hometown: {{hometown}} </ul>
+		<ul> Languages: 
+			{%for language in languages%}
+    		<p>{{language}} </p>
+		<ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
 	</div>
 </div>
 
