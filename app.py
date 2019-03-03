@@ -22,10 +22,10 @@ def index():
 
 
 # Stores information about passenger in the session for global use
-@app.route('/welcome')
+@app.route('/welcome', methods=['GET','POST'])
 def welcome():
 	if (request.method == 'POST'):
-		conf = request.form.conf
+		conf = request.form['conf']
 		found_passenger = mongo.db.passengers.find_one({'confirmation':conf})
 		if found_passenger is not None:
 			session['passenger'] = found_passenger
