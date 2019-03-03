@@ -37,3 +37,7 @@ website (Redirected) --> Hello, name
       3. Little facts about them
       4. Photo
       5. Languages
+      
+main blue: #013E7D
+2nd darkest: #005CA9
+light blue: #4E90CC
