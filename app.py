@@ -20,11 +20,16 @@ def index():
 
 
 # Stores information about passenger in the session for global use
-@app.route('/welcome', methods=['POST'])
+@app.route('/welcome')
 def welcome():
-    conf = requests.form.confirmation 
-    session['passenger'] = Passengers.get(confirmation = conf)
-    return render_template('welcome.html', passenger = session['passenger'])
+	if (request.method == 'POST'):
+		conf = request.form.confirmation
+		session['passenger'] = mongo.db.passengers.find_one({'confirmation':conf})
+		session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
+	if 'flightid' in session:
+	    return render_template('welcome.html', passenger = session['flightid'])
+	else:
+		return redirect(url_for('index'))
 
 # Gets Staff info from the db, as staff might be different each flight
 @app.route('/team', methods=['GET'])
@@ -48,7 +53,7 @@ def submit_request():
     formdata = request.form
     flash('Your request has been received! {{name}} will be by seat {{seat}} shortly.')
 
-    return redirect(url_for('requests'))
+    return redirect(url_for('welcome'))
 
 @app.errorhandler(404)
 def page_not_found(e):
