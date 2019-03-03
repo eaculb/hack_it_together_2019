@@ -26,7 +26,8 @@ def welcome():
     session['passenger'] = Passengers.get(confirmation = conf)
     return render_template('welcome.html', passenger = session['passenger'])
 
-@app.route('/team')
+# Gets Staff info from the db, as staff might be different each flight
+@app.route('/team', methods=['GET'])
 def team():
     print("Test flightid: " + Flight.flightid())
     # Pull all the staffs that have the current flightid
@@ -37,6 +38,7 @@ def team():
     session["flight"] = Flight.get(flightid)
 
     return render_template('empty.html')
+
 
 @app.route('/requests')
 def requests():
