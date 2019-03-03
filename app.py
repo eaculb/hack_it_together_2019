@@ -15,19 +15,20 @@ mongo = PyMongo(app)
 # Routes
 @app.route('/')
 def index():
+	# We are hardcoding this to be our one toy flight
     session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
-    return "<h1>You did it!</h1><p>" + session['flightid'] + "</p>"
+    return render_template('index.html')
 
 
 # Stores information about passenger in the session for global use
 @app.route('/welcome')
 def welcome():
 	if (request.method == 'POST'):
-		conf = request.form.confirmation
+		conf = request.form.conf
 		session['passenger'] = mongo.db.passengers.find_one({'confirmation':conf})
 		session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
 	if 'flightid' in session:
-	    return render_template('welcome.html', passenger = session['flightid'])
+	    return render_template('welcome.html', name = session['passenger']['name']['first'])
 	else:
 		return redirect(url_for('index'))
 
@@ -40,10 +41,6 @@ def team():
 	# session["flight"] = Flight.get(flightid)
 	return render_template('team.html', staff = staff)
 
-@app.route('/testpilot')
-def testpilot():
-	return render_template('pilot.html', rating = 5, years_of_experience = 5, number = 6, pilotname = 'bob', hometown = 'NYC', languages = ['English'], funfact = 'i like turtles')
-
 @app.route('/requests')
 def requests():
     return render_template('requests.html', seat='19F', staff_member = 'Bob')
@@ -51,7 +48,9 @@ def requests():
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
     formdata = request.form
-    flash('Your request has been received! {{name}} will be by seat {{seat}} shortly.')
+    person = 'Lizzie' #TODO: fix it
+    seat = '19F' #TODO: un-hardcode this
+    flash('Your request has been received! ' + person + ' will be by seat ' +seat+ ' shortly.')
 
     return redirect(url_for('welcome'))
 

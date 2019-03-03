@@ -2,11 +2,20 @@
 
 h1 {
 	background-color: #013E7D;
+	color: white;
+	text-align: center;
+	font-family: din, sans-serif;
+}
+h6 {
+	background-color: #013E7D;
+	color: white;
 	text-align: center;
 	font-family: din, sans-serif;
 }
 
 .container {
+	background-color: #013EVD;
+	color: white;
 	font-family: din, sans-serif;
 	display: inline-block;
 	width: 40%;
