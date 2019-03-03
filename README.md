@@ -31,6 +31,6 @@ User will log into the wifi and provide confirmation number of flight. Once conf
       5. Languages
 
 ###### Hex Codes for Colors
-###### main blue: #013E7D
-###### 2nd darkest: #005CA9
-###### light blue: #4E90CC
+> ###### main blue: #013E7D
+> ###### 2nd darkest: #005CA9
+> ###### light blue: #4E90CC
