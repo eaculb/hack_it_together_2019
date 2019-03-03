@@ -1,8 +1,8 @@
 # hack_it_together_2019
 Planning:
--[x] Log into the wifi
--[x]Provide confirmation Number of flight
--[x]Personalized website (Redirected)
+* Log into the wifi
+* Provide confirmation Number of flight
+* Personalized website (Redirected)
 
 # Check-ups:
 - Greet and make it personalized
