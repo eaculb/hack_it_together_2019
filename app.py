@@ -2,6 +2,7 @@
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, flash
 from flask_pymongo import PyMongo, ObjectId
 from datetime import datetime
+import random
 from models import *
 import json
 
@@ -25,8 +26,12 @@ def index():
 def welcome():
 	if (request.method == 'POST'):
 		conf = request.form.conf
-		session['passenger'] = mongo.db.passengers.find_one({'confirmation':conf})
-		session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
+		found_passenger = mongo.db.passengers.find_one({'confirmation':conf})
+		if found_passenger is not None:
+			session['passenger'] = found_passenger
+		else:
+			flash('Confirmation number not found.')
+			return redirect(url_for('index'))
 	if 'flightid' in session:
 	    return render_template('welcome.html', name = session['passenger']['name']['first'])
 	else:
@@ -37,20 +42,23 @@ def welcome():
 def team():
 	# Pull all the staffs that have the current flightid
 	staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
-
+	staffnames = []
+	for person in staff:
+		staffnames.append(person['name']['first'])
+	session['staffnames'] = staffnames
 	# session["flight"] = Flight.get(flightid)
 	return render_template('team.html', staff = staff)
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html', seat='19F', staff_member = 'Bob')
+    return render_template('requests.html', seat=session['passenger']['seat'], staff_member = random.choice(session['staffnames']))
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
     formdata = request.form
     person = 'Lizzie' #TODO: fix it
-    seat = '19F' #TODO: un-hardcode this
-    flash('Your request has been received! ' + person + ' will be by seat ' +seat+ ' shortly.')
+    seat = session['passenger']['seat']
+    flash('Your request has been received! ' + person + ' will be by seat ' + seat + ' shortly.')
 
     return redirect(url_for('welcome'))
 
