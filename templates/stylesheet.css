@@ -9,4 +9,15 @@ h1 {
 .container {
 	font-family: din, sans-serif;
 	display: inline-block;
+<<<<<<< HEAD
+	width: 40%;
+	margin: 3%;
+	padding-bottom: 5%;
 }
+
+img {
+	padding-right: 3%;
+}
+=======
+}
+>>>>>>> 2bb873959fd92edf5046e0f3023d257e77fd39cb
