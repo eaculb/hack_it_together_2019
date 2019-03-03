@@ -2,7 +2,7 @@
 ## hack_it_together_2019
 
 Plan: 
-User will log into the wifi and provide confirmation Number of flight
+User will log into the wifi and provide confirmation number of flight
 Once confimed, they will be redirected to a personalized website
 
 # Personalized Website Includes:
