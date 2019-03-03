@@ -21,19 +21,21 @@ def welcome():
     session['passenger'] = Passengers.get(confirmation = conf)
     return render_template('welcome.html', passenger = session['passenger'])
 
-@app.route('/team')
+# Gets Staff info from the db, as staff might be different each flight
+@app.route('/team', methods=['GET'])
 def team():
-	print("Test flightid: " + Flight.flightid()
+	print("Test flightid: " + Flight.flightid())
 	# Pull all the staffs that have the current flightid
 	for Staff in Staff.objects(flightid = Flight.flightid):
-		name = Staff.get(name)
-		print(name)
+		print("Name: ", Staff.get(name))
+		print("Role: ", Staff.get(role))
+		print("Fun fact: ", Staff.get(funfact))
+	
+	staffs = Staff.all()
+	staffs = *_dict()
 
-	session["flight"] = Flight.get(flightid)
-
-
-
-    return render_template()
+	# session["flight"] = Flight.get(flightid)
+    return render_template('team', staffs = Staff.all())
 
 @app.route('/requests')
 def requests():
