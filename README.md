@@ -6,7 +6,7 @@ User will log into the wifi and provide confirmation number of flight. Once conf
 
 # Personalized Website Includes:
 ## 1. Check-ups:
-* Greet and make it personalized
+* Will include:
   1. Flight number
   2. Button to call the attendants
   3. Drop down menu: Water, Food, Barf Bag, Food, Other
