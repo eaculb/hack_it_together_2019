@@ -17,7 +17,7 @@ lizzie = Staff(*lizzie_dict).save()
 jimmy_dict = {
 	'name' : 'Jimmy Bobbertson'
 	'role' : 'cabin crew'
-	'startdate' : datetime(2018, 6, 2, 12, 00)
+	'startdate' : datetime(2016, 6, 2, 12, 00)
 	'languages' : ['English', 'Español']
 	'hometown' : 'Vienna, VA'
 	'funfact' : 'I sing barbershop!'
@@ -26,7 +26,7 @@ jimmy_dict = {
 }
 
 lizzie_dict = {
-	'name' : 'Elizabeth Culbertson'
+	'name' : 'Kelly Personson'
 	'role' : 'cabin crew'
 	'startdate' : datetime(2018, 6, 2, 12, 00)
 	'languages' : ['English', 'Español']

@@ -6,6 +6,8 @@ from flask_mongoengine import MongoEngine, ObjectId
 
 app = Flask(__name__)
 app.register_error_handler(404, page_not_found)
+app.config.from_object('config')
+mongo = MongoEngine(app)
 
 # Routes
 
