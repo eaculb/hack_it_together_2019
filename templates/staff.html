@@ -5,16 +5,13 @@
     <!-- Photo of Staff Member-->
     <img src = {{photourl}} style = float:left alt = "Staff Member Photo" height="242" width="242">
 
-    <!--Rest of the Information-->
-    <br /> Name: {{name}}
-    <br /> Role: {{role}}
-    <br /> Start Date: startdate
-    <br /> Hometown:{{hometown}}
-    <br /> Languages
-           {%for language in languages%}
-    <p>{{language}}</p>
-    {% endfor %} </br>
-
-    <br/>Fun fact about {{name}}: {{funfact}}</br>
+<!--Rest of the Information-->
+    <ul> Name: {{name}} </ul>
+    <ul> Role: {{role}} </ul>
+    <ul> Hometown: {{hometown}} </ul>
+    <ul> Languages: 
+        {%for language in languages%}
+        <p>{{language}} </p>
+    <ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
 </html>
 {% endblock %}
