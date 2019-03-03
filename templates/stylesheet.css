@@ -8,6 +8,8 @@ h1 {
 }
 
 .container {
+	background-color: #013EVD;
+	color: white;
 	font-family: din, sans-serif;
 	display: inline-block;
 	width: 40%;
