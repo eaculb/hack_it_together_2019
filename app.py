@@ -21,10 +21,14 @@ def welcome():
 
 @app.route('/team')
 def team():
+	print("Test flightid: " + Flight.flightid()
 	# Pull all the staffs that have the current flightid
 	for Staff in Staff.objects(flightid = Flight.flightid):
-		print("Test flightid: " + Flight.flightid)
-		print("Test flightid: " + Flight.objects(flightid))
+		name = Staff.get(name)
+		print(name)
+
+	session["flight"] = Flight.get(flightid)
+
 
 
     return render_template()
