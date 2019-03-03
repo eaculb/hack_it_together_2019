@@ -13,6 +13,12 @@ app.register_error_handler(404, page_not_found)
 def index():
     return render_template('empty.html')
 
+@app.route('/welcome', methods=['POST'])
+def welcome():
+    conf = requests.form.confirmation 
+    session['passenger'] = Passengers.get(confirmation = conf)
+    return render_template('welcome.html', passenger = session['passenger'])
+
 @app.route('/team')
 def team():
 	# Pull all the staffs that have the current flightid
@@ -25,7 +31,15 @@ def team():
 
 @app.route('/requests')
 def requests():
-    return render_template()
+    return render_template('requests.html')
+
+@app.route('/submit-request', methods=['POST'])
+def submit_request():
+    formdata = requests.form
+    flash('Your request has been received! {{name}} will be by seat {{}} shortly.')
+
+    return redirect(url_for('requests'))
+
 
 @app.errorhandler(404)
 def page_not_found(e):
