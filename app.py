@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, flash
-from flask_mongoengine import MongoEngine, ObjectId
+from flask_mongoengine import MongoEngine
 
 # Init processes
 
 app = Flask(__name__)
 app.register_error_handler(404, page_not_found)
+app.config.from_object('config')
+mongo = MongoEngine(app)
 
 # Routes
 

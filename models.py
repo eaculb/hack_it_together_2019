@@ -1,4 +1,4 @@
-from flask_mongoengine import MongoEngine, ObjectId
+from flask_mongoengine import MongoEngine
 
 class Passenger(Document):
     name = StringField(required=True)
