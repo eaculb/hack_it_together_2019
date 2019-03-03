@@ -1,8 +1,8 @@
 @font-face { font-family: din; font-weight: regular; src: url('din1451alt.ttf'); }
 
 h1 {
-	background-color: "#013E7D";
-	color: "#FFFFFF";
+	background-color: #013E7D;
+	color: white;
 	text-align: center;
 	font-family: din, sans-serif;
 }
