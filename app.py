@@ -49,11 +49,11 @@ def team():
 	for person in staff_res:
 		staff.append(person)
 	# session["flight"] = Flight.get(flightid)
-	return render_template('attendees.html', staffmembers = staff)
+	return render_template('attendees.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html', seat=session['passenger']['seat'], staff_member = 'Lizzie')
+    return render_template('requests.html',  staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
