@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/stylesheet.css')}}">
 
 <title>Welcome Page</title>
 
 <body>
 	<div class="container-ticket-confirmation">
-		<img class="tblogo" src="../static/trueblue_logo.png" alt="TrueBlue Logo" width="160px" height="45px">
+		<img class="tblogo" src="{{url_for('static',filename='trueblue_logo.png')}}" alt="TrueBlue Logo" width="160px" height="45px">
 
 
 		{% with messages = get_flashed_messages() %}

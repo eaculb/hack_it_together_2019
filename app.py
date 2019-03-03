@@ -31,12 +31,7 @@ def welcome():
 			temp = {'name': found_passenger['name'],
 					'seat': found_passenger['seat']}
 			session['passenger'] = temp
-			staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
-			staffnames = []
-			for person in staff:
-				staffnames.append(person['name']['first'])
-			session['staffnames'] = staffnames
-			print(session['staffnames'])
+			staff = mongo.db.staff.find({"flightid": ObjectId(session['flightid'])})
 		else:
 			flash('Confirmation number not found.')
 			return redirect(url_for('index'))
@@ -50,12 +45,8 @@ def welcome():
 def team():
 	# Pull all the staffs that have the current flightid
 	staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
-	staffnames = []
-	for person in staff:
-		staffnames.append(person['name']['first'])
-	session['staffnames'] = staffnames
 	# session["flight"] = Flight.get(flightid)
-	return render_template('team.html', staff = staff)
+	return render_template('attendees.html', staff = staff)
 
 @app.route('/requests')
 def requests():
