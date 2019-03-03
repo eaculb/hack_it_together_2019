@@ -1,21 +1,21 @@
-## jetBlue Caring Project
-# hack_it_together_2019
+# jetBlue Caring Project
+## hack_it_together_2019
 
 Plan: 
 User will log into the wifi and provide confirmation Number of flight
 Once confimed, they will be redirected to a personalized website
 
-## Personalized Website Includes:
-# Check-ups:
-- Greet and make it personalized
-  * Flight number
-  * Button to call the attendants
-  * Drop down menu: Water, Food, Barf Bag, Food, Other
-  * Purchases provided for?
-  * Can I have some travel lotion
-  * Mid-way check ups?
-      ** Longer flights
-      ** Anything we can do?
+# Personalized Website Includes:
+## Check-ups:
+* Greet and make it personalized
+  1. Flight number
+  2. Button to call the attendants
+  3. Drop down menu: Water, Food, Barf Bag, Food, Other
+  4. Purchases provided for?
+  5. Can I have some travel lotion
+  6. Mid-way check ups?
+      * Longer flights
+      * Anything we can do?
 
 ## Bagagge Info
   1. Hey your bag has been scanned, is on the belt
