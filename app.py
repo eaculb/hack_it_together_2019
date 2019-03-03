@@ -44,9 +44,12 @@ def welcome():
 @app.route('/team', methods=['GET'])
 def team():
 	# Pull all the staffs that have the current flightid
-	staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
+	staff_res = (mongo.db.staff.find({"flightid": ObjectId(session['flightid'])}))
+	staff = []
+	for person in staff_res:
+		staff.append(person)
 	# session["flight"] = Flight.get(flightid)
-	return render_template('attendees.html', staff = staff)
+	return render_template('attendees.html', staffmembers = staff)
 
 @app.route('/requests')
 def requests():

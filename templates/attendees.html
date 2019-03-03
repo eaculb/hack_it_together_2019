@@ -9,25 +9,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h1> About The Flight Attendents </h1>
-{% for attendent in staff %}
-if(attendent[role] == "Crew Member")
-{
-
 
 
 <title>Meet your team!</title>
 	
 <div class = "content">
-	{% for staff in staff_list %}
-		<div class = "container">
-			{% block staffcard%}{%endblock%}
+	{% for staff in staffmembers %}
+		<div class = "container" style="color:#004990">
+			    <!-- Photo of Staff Member-->
+		    <img src = {{staff.photourl}} style = float:left alt = "Staff Member Photo" height="242" width="242">
+
+		    <!--Rest of the Information-->
+		    <ul> Name: {{staff.name}} </ul>
+		    <ul> Role: {{staff.role}} </ul>
+		    <ul> Hometown: {{staff.hometown}} </ul>
+		    <ul> Languages: 
+		        {%for language in staff.languages%}
+		        <p>{{language}} </p>
+		        {%endfor%}
+		    <ul> Fun fact about {{staff.name}}: {{staff.funfact}} </ul>
+		</html>
 		</div>
 	{% endfor %}
 </div>
 
-
-}
-{% endfor %}
 {% endblock %}
 
 <!-- Footer -->
