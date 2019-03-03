@@ -13,7 +13,7 @@ class Staff(Document):
     languages = ListField(StringField(required=True))
     hometown = StringField(required=True)
     funfact = StringField(required=True)
-    photo = URLField(required=True)
+    photourl = URLField(required=True)
     flightid = ObjectIdField(required=True)
 
 class Flight(Document):

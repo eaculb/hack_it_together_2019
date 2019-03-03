@@ -40,7 +40,7 @@ def requests():
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
     formdata = requests.form
-    flash('Your request has been received! {{name}} will be by seat {{}} shortly.')
+    flash('Your request has been received! {{name}} will be by seat {{seat}} shortly.')
 
     return redirect(url_for('requests'))
 
