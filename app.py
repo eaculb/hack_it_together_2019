@@ -41,11 +41,11 @@ def testpilot():
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html')
+    return render_template('requests.html', seat='19F', staff_member = 'Bob')
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
-    formdata = requests.form
+    formdata = request.form
     flash('Your request has been received! {{name}} will be by seat {{seat}} shortly.')
 
     return redirect(url_for('requests'))
