@@ -25,11 +25,12 @@ website (Redirected) --> Hello, name
   * Filtered by language
   - Pilot info:
       1. How many flights they've had this yet
-      2. Status of those flights
+      2. Years of experience
       3. Langauges
       4. Hometown
       5. Fun facts
       6. Photo
+      7. Rating
   - Flight attendants:
       1. Where they are from
       2. Name
