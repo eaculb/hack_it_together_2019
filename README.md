@@ -6,7 +6,7 @@ User will log into the wifi and provide confirmation number of flight. Once conf
 
 # Personalized Website Includes:
 ## 1. Check-ups:
-* Greet and make it personalized
+* Will include:
   1. Flight number
   2. Button to call the attendants
   3. Drop down menu: Water, Food, Barf Bag, Food, Other
@@ -18,16 +18,14 @@ User will log into the wifi and provide confirmation number of flight. Once conf
       
 ## 2. Cabin Crew Info
   * Pilot info:
-      1. How many flights they've had this yet
-      2. Years of experience
-      3. Langauges
-      4. Hometown
-      5. Fun facts
-      6. Photo
-      7. Rating
+      1. Name
+      2. Langauges
+      3. Hometown
+      4. Fun facts
+      5. Photo
   * Flight attendants:
-      1. Where they are from
-      2. Name
+      1. Name
+      2. Hometown
       3. Little facts about them
       4. Photo
       5. Languages
