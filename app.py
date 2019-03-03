@@ -1,19 +1,24 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, flash
-from flask_mongoengine import MongoEngine
+from flask_pymongo import PyMongo, ObjectId
+from datetime import datetime
+from models import *
+import json
 
 # Init processes
 
 app = Flask(__name__)
-app.register_error_handler(404, page_not_found)
-app.config.from_object('config')
-db = MongoEngine(app)
+# app.register_error_handler(404, page_not_found)
+app.config['MONGO_URI'] = "mongodb://eac:sfmlab1107@ds159025.mlab.com:59025/hackit_jetblue"
+mongo = PyMongo(app)
 
 # Routes
 
 @app.route('/')
 def index():
-    return render_template('empty.html')
+    session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
+    return "<h1>You did it!</h1><p>" + session['flight'] + "</p>"
+
 
 @app.route('/welcome', methods=['POST'])
 def welcome():
@@ -23,7 +28,7 @@ def welcome():
 
 @app.route('/team')
 def team():
-	print("Test flightid: " + Flight.flightid()
+	print("Test flightid: " + Flight.flightid())
 	# Pull all the staffs that have the current flightid
 	for Staff in Staff.objects(flightid = Flight.flightid):
 		name = Staff.get(name)
@@ -33,7 +38,7 @@ def team():
 
 
 
-    return render_template()
+    return render_template('empty.html')
 
 @app.route('/requests')
 def requests():
@@ -49,7 +54,8 @@ def submit_request():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.html', 404)
 
 if __name__ == '__main__':
+    app.config["SECRET_KEY"] = "hackit!!!"
     app.run('localhost', 8080, debug=True)

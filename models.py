@@ -2,23 +2,48 @@ from flask_mongoengine import MongoEngine
 from mongoengine import Document
 from mongoengine import *
 
-class Passenger(Document):
-    name = StringField(required=True)
-    confirmation = StringField(required=True)
-    seat = StringField(required=True)
-    flightid = ObjectIdField(required=True)
+class Passenger():
+    def __init__(self, name, confirmation, seat, flightid):
+        self.name = name
+        self.confirmation = confirmation
+        self.seat = seat
+        self.flightid = flightid
+    def to_json(self):
+        return {
+            'name' : self.name,
+            'confirmation' : self.confirmation,
+            'seat' : self.seat,
+            'flightid' : self.flightid
+        }
 
-class Staff(Document):
-    name = StringField(required=True)
-    role = StringField(required=True)
-    startdate = DateTimeField(required=True)
-    languages = ListField(StringField(required=True))
-    hometown = StringField(required=True)
-    funfact = StringField(required=True)
-    photourl = URLField(required=True)
-    flightid = ObjectIdField(required=True)
+class Staff():
+    def __init__(self, name, role, startdate, languages, hometown, funfact, photourl, flightid):
+        self.name = name
+        self.role = role
+        self.startdate = startdate
+        self.languages = languages
+        self.hometown = hometown
+        self.funfact = funfact
+        self.photourl = photourl
+        self.flightid = flightid
+    def to_json(self):
+        return {
+            'name' : self.name,
+            'role' : self.role,
+            'startdate' : self.startdate,
+            'languages' : self.languages,
+            'hometown' : self.hometown,
+            'funfact' : self.funfact,
+            'photourl' : self.photourl,
+            'flightid' : self.flightid
+        }
 
-class Flight(Document):
-    flightid = ObjectIdField(required=True)
-    passengers = ListField(ObjectIdField(required=True))
-    staff = ListField(ObjectIdField(required=True))
+class Flight():
+    def __init__(self, passengers, staff):
+        self.passengers = passengers
+        self.staff = staff
+    def to_json(self):
+        return {
+            'passengers' : self.passengers,
+            'staff' : self.staff
+        }
