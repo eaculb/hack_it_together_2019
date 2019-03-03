@@ -31,6 +31,12 @@ def welcome():
 			temp = {'name': found_passenger['name'],
 					'seat': found_passenger['seat']}
 			session['passenger'] = temp
+			staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
+			staffnames = []
+			for person in staff:
+				staffnames.append(person['name']['first'])
+			session['staffnames'] = staffnames
+			print(session['staffnames'])
 		else:
 			flash('Confirmation number not found.')
 			return redirect(url_for('index'))
@@ -53,7 +59,7 @@ def team():
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html', seat=session['passenger']['seat'], staff_member = random.choice(session['staffnames']))
+    return render_template('requests.html', seat=session['passenger']['seat'], staff_member = 'Lizzie')
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
@@ -63,10 +69,6 @@ def submit_request():
     flash('Your request has been received! ' + person + ' will be by seat ' + seat + ' shortly.')
 
     return redirect(url_for('welcome'))
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.config["SECRET_KEY"] = "hackit!!!"
