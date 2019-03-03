@@ -21,6 +21,12 @@ def welcome():
 
 @app.route('/team')
 def team():
+	# Pull all the staffs that have the current flightid
+	for Staff in Staff.objects(flightid = Flight.flightid):
+		print("Test flightid: " + Flight.flightid)
+		print("Test flightid: " + Flight.objects(flightid))
+
+
     return render_template()
 
 @app.route('/requests')

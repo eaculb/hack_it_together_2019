@@ -5,16 +5,19 @@
 <h5><font color ="#FFFFFF">You are boarding flight {{flightnumber}}, Seat {{seatnumber}}.</h5>
 <img src ="url">
 <p>Your Pilot is {{pilotname}}<br />
-  <button type ="button" onclick="About the Pilot">About the Pilot</button>
-  <button type ="button" Onclick="About the Flight Attendees">About the Flight Attendees</button>
+  <form action="pilot.html">
+    <input type="submit" value="About the Pilot">
+  <form action="attendees.html">
+    <input type="submit" value="Meet the Attendees">
+  </form>
  </p>
 </body>
 <footer>
-  <div class="dropdown-content">Request On-Board Assistance>
-    <a>Request a drink/snack</a>
-    <a>Make an additional purchase</a>
-    <a>Ask a Question/Concern</a>
-  
+<button name="Request On-Flight Assistance"size ="3" multiple="no">
+  <option>Request Food or Beverages</option>
+  <option>Make an Additional Purchase</option>
+  <option>Ask A Question/Voice A Concern</option>
+  </select>
   <p>Destination: {{destination}}<br />
   Projected Arrival Time: {{arrivaltime}}</p>
 </html>
