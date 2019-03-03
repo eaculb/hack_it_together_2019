@@ -3,6 +3,16 @@
 {% block body %}
 
 {% for staff in staff_list %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='..css/stylesheet.css')}}">
+	
+	<div class="navigator">
+		<ul>
+		    <li> <a class= "{{url_for('welcome')}}" href= "#homepage"> Home </a> </li>
+		    <li> <a href = "{{url_for('team')}}"> Team </a> </li>
+		    <li> <a href = "{{url_for('requests')}}"> Request Assistance </a> </li>
+		</ul>
+	</div>
+
 	<div class="container">
 	{% block staffcard%}{%endblock%}
 	</div>
