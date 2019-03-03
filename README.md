@@ -1,9 +1,8 @@
 # hack_it_together_2019
-
-- Log into the wifi --> Provide confirmation Number of flight --> Personalized
-website (Redirected) --> Hello, name
-- Scanner with QRCode or Type in flight info confirmation number
-- Scan your boarding pass, will know your Name & Seat Number, etc
+Planning:
+* Log into the wifi
+* Provide confirmation Number of flight
+* Personalized website (Redirected)
 
 # Check-ups:
 - Greet and make it personalized
@@ -37,7 +36,8 @@ website (Redirected) --> Hello, name
       3. Little facts about them
       4. Photo
       5. Languages
-      
-main blue: #013E7D
-2nd darkest: #005CA9
-light blue: #4E90CC
+
+Hex Codes for Colors
+* main blue: #013E7D
+* 2nd darkest: #005CA9
+* light blue: #4E90CC
