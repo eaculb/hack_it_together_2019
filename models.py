@@ -1,10 +1,12 @@
 from flask_mongoengine import MongoEngine
+from mongoengine import Document
+from mongoengine import *
 
 class Passenger(Document):
     name = StringField(required=True)
     confirmation = StringField(required=True)
     seat = StringField(required=True)
-    flightid = ObjectId(required=True)
+    flightid = ObjectIdField(required=True)
 
 class Staff(Document):
     name = StringField(required=True)

@@ -3,6 +3,13 @@
 from models import *
 from datetime import datetime
 
+from flask import Flask, render_template, url_for, request, session, redirect, jsonify, flash
+from flask_mongoengine import MongoEngine, ObjectId
+
+app = Flask(__name__)
+app.config.from_object('config')
+db = MongoEngine(app)
+
 lizzie_dict = {
 	'name' : 'Elizabeth Culbertson',
 	'role' : 'cabin crew',
