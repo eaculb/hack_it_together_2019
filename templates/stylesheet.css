@@ -32,6 +32,18 @@ body {
 	background-image: url("../static/index-background.svg")
 }
 
+.tblogo {
+	padding-bottom: 30px;
+}
+
+#submit {
+	background-color: #004990;
+	border: none;
+	height: 50px;
+	width: 40%;
+	color: #fff;
+	border-radius: 13px;
+}
 
 .container-ticket-confirmation {
 	background-color: #fff;

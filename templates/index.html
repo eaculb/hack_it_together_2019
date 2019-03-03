@@ -6,28 +6,26 @@
 <title>Welcome Page</title>
 
 <body>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-	    <ul class=flashes style="color:#d50f0f">
-	    {% for message in messages %}
-	      <p>{{ message }}</p>
-	    {% endfor %}
-	    </ul>
-	  {% endif %}
-	{% endwith %}
 	<div class="container-ticket-confirmation">
 		<img class="tblogo" src="../static/trueblue_logo.png" alt="TrueBlue Logo" width="160px" height="45px">
+
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    <ul class=flashes style="color:#d50f0f">
+		    {% for message in messages %}
+		      <p>{{ message }}</p>
+		    {% endfor %}
+		    </ul>
+		  {% endif %}
+		{% endwith %}
+
 		<div class="ticket_confirmation">
 			<form action="{{url_for('welcome')}}" method="POST">
-				<b>Ticket Confirmation #:<b><br><input type="text" name="conf"><br><br>
-
-			
-				</div>
-				<div class = "ticket_number">
-				    <input type="submit" value="Confirm Ticket!">
-				</div>
+				<b>Ticket Confirmation #:<b><br><br><input type="text" name="conf"><br><br>	
+				<button name="submit" id="submit" type="submit"><b>Confirm Ticket!<b></button>
 			</form>
-	</div>
+		</div>
 </body>
 
 </html>

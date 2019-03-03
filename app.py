@@ -28,12 +28,14 @@ def welcome():
 		conf = request.form['conf']
 		found_passenger = mongo.db.passengers.find_one({'confirmation':conf})
 		if found_passenger is not None:
-			session['passenger'] = found_passenger
+			temp = {'name': found_passenger['name'],
+					'seat': found_passenger['seat']}
+			session['passenger'] = temp
 		else:
 			flash('Confirmation number not found.')
 			return redirect(url_for('index'))
 	if 'flightid' in session:
-	    return render_template('welcome.html', name = session['passenger']['name']['first'])
+	    return render_template('welcome.html', name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 	else:
 		return redirect(url_for('index'))
 
