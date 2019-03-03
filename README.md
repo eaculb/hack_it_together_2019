@@ -2,7 +2,7 @@
 ## hack_it_together_2019
 
 Plan: 
-User will log into the wifi and provide confirmation Number of flight
+User will log into the wifi and provide confirmation number of flight
 Once confimed, they will be redirected to a personalized website
 
 # Personalized Website Includes:
@@ -16,13 +16,8 @@ Once confimed, they will be redirected to a personalized website
   6. Mid-way check ups?
       * Longer flights
       * Anything we can do?
-
-## 2. Bagagge Info
-  1. Hey your bag has been scanned, is on the belt
-  2. Hey your bag was selcted for an impromptu inspection
-  3. It's on the plane
-
-# 3. Cabin Crew Info
+      
+## 2. Cabin Crew Info
   * Pilot info:
       1. How many flights they've had this yet
       2. Years of experience
