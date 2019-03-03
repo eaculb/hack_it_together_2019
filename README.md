@@ -6,7 +6,7 @@ User will log into the wifi and provide confirmation Number of flight
 Once confimed, they will be redirected to a personalized website
 
 # Personalized Website Includes:
-## Check-ups:
+## 1. Check-ups:
 * Greet and make it personalized
   1. Flight number
   2. Button to call the attendants
@@ -17,14 +17,13 @@ Once confimed, they will be redirected to a personalized website
       * Longer flights
       * Anything we can do?
 
-## Bagagge Info
+## 2. Bagagge Info
   1. Hey your bag has been scanned, is on the belt
   2. Hey your bag was selcted for an impromptu inspection
   3. It's on the plane
 
-# Who's on your team
-  * Filtered by language
-  - Pilot info:
+# 3. Cabin Crew Info
+  * Pilot info:
       1. How many flights they've had this yet
       2. Years of experience
       3. Langauges
@@ -32,7 +31,7 @@ Once confimed, they will be redirected to a personalized website
       5. Fun facts
       6. Photo
       7. Rating
-  - Flight attendants:
+  * Flight attendants:
       1. Where they are from
       2. Name
       3. Little facts about them
