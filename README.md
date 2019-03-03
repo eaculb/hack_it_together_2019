@@ -14,8 +14,8 @@ Once confimed, they will be redirected to a personalized website
   * Purchases provided for?
   * Can I have some travel lotion
   * Mid-way check ups?
-      a. Longer flights
-      b. Anything we can do?
+      ** Longer flights
+      ** Anything we can do?
 
 ## Bagagge Info
   1. Hey your bag has been scanned, is on the belt
