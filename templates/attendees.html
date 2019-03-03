@@ -14,61 +14,11 @@ if(attendent[role] == "Crew Member")
 <title>Meet your team!</title>
 	
 <div class = "content">
-	<div class = "container">
-		<!-- Photo of Attendents-->
-		<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
-
-		<!--Rest of the Information-->
-		<ul> Name: {{name}} </ul>
-		<ul> Role: {{role}} </ul>
-		<ul> Hometown: {{hometown}} </ul>
-		<ul> Languages: 
-			{%for language in languages%}
-    		<p>{{language}} </p>
-		<ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
-	</div>
-
-	<div class = "container">
-		<!-- Photo of Attendents-->
-		<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
-
-		<!--Rest of the Information-->
-		<ul> Name: {{name}} </ul>
-		<ul> Role: {{role}} </ul>
-		<ul> Hometown: {{hometown}} </ul>
-		<ul> Languages: 
-			{%for language in languages%}
-    		<p>{{language}} </p>
-		<ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
-	</div>
-
-	<div class = "container">
-		<!-- Photo of Attendents-->
-		<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
-
-		<!--Rest of the Information-->
-		<ul> Name: {{name}} </ul>
-		<ul> Role: {{role}} </ul>
-		<ul> Hometown: {{hometown}} </ul>
-		<ul> Languages: 
-			{%for language in languages%}
-    		<p>{{language}} </p>
-		<ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
-	</div>
-
-	<div class = "container">
-		<!-- Photo of Attendents-->
-		<img src = "attendee.jpg" style = float:left alt = "Attendee Photo (for now)" height="242" width="242">
-
-		<!--Rest of the Information-->
-		<ul> Name: {{name}} </ul>
-		<ul> Role: {{role}} </ul>
-		<ul> Hometown: {{hometown}} </ul>
-		<ul> Languages: 
-			{%for language in languages%}
-    		<p>{{language}} </p>
-		<ul> Fun fact about {{name}}: {{insert fun fact here}} </ul>
-	</div>
+	{% for staff in staff_list %}
+		<div class = "container">
+			{% block staffcard%}{%endblock%}
+		</div>
+	{% endfor %}
 </div>
 
 
