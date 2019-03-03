@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
-    return "<h1>You did it!</h1><p>" + session['flight'] + "</p>"
+    return "<h1>You did it!</h1><p>" + session['flightid'] + "</p>"
 
 
 @app.route('/welcome', methods=['POST'])
@@ -28,15 +28,13 @@ def welcome():
 
 @app.route('/team')
 def team():
-	print("Test flightid: " + Flight.flightid())
-	# Pull all the staffs that have the current flightid
-	for Staff in Staff.objects(flightid = Flight.flightid):
-		name = Staff.get(name)
-		print(name)
+    print("Test flightid: " + Flight.flightid())
+    # Pull all the staffs that have the current flightid
+    for Staff in Staff.objects(flightid = Flight.flightid):
+        name = Staff.get(name)
+        print(name)
 
-	session["flight"] = Flight.get(flightid)
-
-
+    session["flight"] = Flight.get(flightid)
 
     return render_template('empty.html')
 
@@ -51,10 +49,9 @@ def submit_request():
 
     return redirect(url_for('requests'))
 
-
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html', 404)
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.config["SECRET_KEY"] = "hackit!!!"
