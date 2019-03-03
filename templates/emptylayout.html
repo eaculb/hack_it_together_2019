@@ -24,14 +24,39 @@ if(member[role] == "Crew Member")
 {% endfor %}
  </p>
 </body>
-<footer>
+
+<!--Scrip to allow, If question, then ask-->
+  <script type="text/javascript">
+      function showfield(name) {
+          if (name == 'question') document.getElementById('question').style.display = "block";
+          else document.getElementById('question').style.display = "none";
+      }
+      function hidefield() {
+          document.getElementById('question').style.display = 'none';
+      }
+  </script>
+  <br>
+
 <div class="dropdown">
-  <button onclick="Request On-Flight Assistance" class="dropbtn">Request On-Flight Assistance</button>
+  <span>Request</span>
   <div class="dropdown-content">
-      <a href="#">Request Food or Beverages</a>
-      <a href="#">Make an Additional Purchase</a>
-      <a href="#">Ask A Question/Voice A Concern</a>
+    <select name="req_assisstance" onchange="showfield(this.options[this.selectedIndex].value)">
+      <option value="" disabled selected>Select One</option>
+      <option value="food_and_drinks"><a href="#">Request Food or Beverages</a></option>
+      <option value="purchases"><a href="#">Make an Additional Purchase</a></option>
+      <option value="question"><a href="#">Ask A Question/Voice A Concern</a></option>
+    </select>
   </div>
+
+  <!--Script reacts here: if queston -> ask -->
+  <div id="question"><br>What's your question:
+      <input type="text" name="asked"/>
+  </div>
+  <br><br>
+
+</div>
+
+
  </div>
   <p>Destination: {{destination}}<br />
   Projected Arrival Time: {{arrivaltime}}</p>
