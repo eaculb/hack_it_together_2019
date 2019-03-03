@@ -22,7 +22,7 @@ Once confimed, they will be redirected to a personalized website
   2. Hey your bag was selcted for an impromptu inspection
   3. It's on the plane
 
-# Who's on your team
+# Cabin Crew Info
   * Filtered by language
   - Pilot info:
       1. How many flights they've had this yet
