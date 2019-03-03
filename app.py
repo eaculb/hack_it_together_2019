@@ -15,19 +15,20 @@ mongo = PyMongo(app)
 # Routes
 @app.route('/')
 def index():
+	# We are hardcoding this to be our one toy flight
     session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
-    return "<h1>You did it!</h1><p>" + session['flightid'] + "</p>"
+    return render_template('index.html')
 
 
 # Stores information about passenger in the session for global use
 @app.route('/welcome')
 def welcome():
 	if (request.method == 'POST'):
-		conf = request.form.confirmation
+		conf = request.form.conf
 		session['passenger'] = mongo.db.passengers.find_one({'confirmation':conf})
 		session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
 	if 'flightid' in session:
-	    return render_template('welcome.html', passenger = session['flightid'])
+	    return render_template('welcome.html', name = session['passenger']['name']['first'])
 	else:
 		return redirect(url_for('index'))
 
