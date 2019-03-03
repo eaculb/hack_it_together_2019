@@ -25,9 +25,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Header -->
 <header>
-<h1>JetBlue Concierge</h1>
-</header>
-
+  <h1 class="w3-xxxlarge"><b><center>Hello, {{name}}!</center></b></h1>
+    <h6><center>You are boarding flight <span class="w3-tag">{{flightnumber}}</span>, Seat <span class="w3-tag">{{seatnumber}}</span>.</center></h6>
+      </header>
+  <hr>
 <!-- Body -->
 
 {%block body%}{%endblock%}
@@ -39,7 +40,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey" style="padding:32px">
   <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p><center>Powered by jetBlue</center></p>
 </footer>
 
 
