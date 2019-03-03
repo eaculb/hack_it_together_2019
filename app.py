@@ -17,10 +17,7 @@ mongo = PyMongo(app)
 def index():
     session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
     return "<h1>You did it!</h1><p>" + session['flightid'] + "</p>"
-<<<<<<< HEAD
-=======
 
->>>>>>> 0b083e81587bae2a7f30612d4830f34b1467c49d
 
 # Stores information about passenger in the session for global use
 @app.route('/welcome', methods=['POST'])
@@ -32,24 +29,15 @@ def welcome():
 # Gets Staff info from the db, as staff might be different each flight
 @app.route('/team', methods=['GET'])
 def team():
-<<<<<<< HEAD
 	# Pull all the staffs that have the current flightid
 	staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
 
 	# session["flight"] = Flight.get(flightid)
 	return render_template('team.html', staff = staff)
-=======
-    print("Test flightid: " + Flight.flightid())
-    # Pull all the staffs that have the current flightid
-    for Staff in Staff.objects(flightid = Flight.flightid):
-        name = Staff.get(name)
-        print(name)
 
-    session["flight"] = Flight.get(flightid)
-
-    return render_template('empty.html')
-
->>>>>>> 0b083e81587bae2a7f30612d4830f34b1467c49d
+@app.route('/testpilot')
+def testpilot():
+	return render_template('pilot.html', rating = 5, years_of_experience = 5, number = 6, pilotname = 'bob', hometown = 'NYC', languages = ['English'], funfact = 'i like turtles')
 
 @app.route('/requests')
 def requests():

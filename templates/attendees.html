@@ -1,6 +1,6 @@
-<!--Meet the Attendees-->
-<html>
-<head><title>About The Flight Attendents</title></head>
+{% extends "temp_template.html" %}
+
+{% block body %}
 
 <h1> About The Flight Attendents </h1>
 {% for attendent in staff %}
@@ -19,3 +19,4 @@ Years of Experience: {{years of experience}} </br>
 }
 {% endfor %}
 </html>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "temp_template.html" %}
+
+{% block body %}
+    <h1> About The Pilot </h1>
+
+    <!-- Photo of Pilot-->
+    <img src = "pilot.jpg" style = float:left alt = "Pilot Photo (for now)" height="242" width="242">
+    
+    <!--Rest of the Information-->
+    Rating: {{rating}}
+    Years of Experience: {{years_of_experience}}
+    Total Number of Flights: {{number}}
+
+    <br/> This is {{pilotname}}, our pilot for this flight. Her hometown is {{hometown}} and he speaks 
+    {%for language in languages%}
+    <p>{{language}}</p>
+    {% endfor %}
+
+    <br/>Fun fact about {{pilotname}}: {{funfact}}</br>
+</html>
+{% endblock %}
