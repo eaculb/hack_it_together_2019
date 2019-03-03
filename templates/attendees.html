@@ -2,6 +2,8 @@
 
 {% block body %}
 
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
 <h1> About The Flight Attendents </h1>
 {% for attendent in staff %}
 if(attendent[role] == "Crew Member")
@@ -16,6 +18,28 @@ Years of Experience: {{years of experience}} </br>
 <br\> Hometown: {{hometown}} </br>
 <br\> Languages: {{languages}} </br>
 <br/>Fun fact about {{name}}: {{insert fun fact here}}</br>
+
+<title>Meet your team!</title>
+	
+<div class = "content">
+	<div class = "container">
+
+	</div>
+
+	<div class = "container>">
+
+	</div>
+
+	<div class = "container">
+
+	</div>
+
+	<div class = "container>">
+
+	</div>
+</div>
+
+
 }
 {% endfor %}
 </html>
