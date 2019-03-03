@@ -8,4 +8,7 @@ h1 {
 .container {
 	font-family: din, sans-serif;
 	display: inline-block;
+	width: 40%;
+	margin: 3%;
+	padding-bottom: 5%;
 }
