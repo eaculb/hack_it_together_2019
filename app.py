@@ -13,13 +13,12 @@ app.config['MONGO_URI'] = "mongodb://eac:sfmlab1107@ds159025.mlab.com:59025/hack
 mongo = PyMongo(app)
 
 # Routes
-
 @app.route('/')
 def index():
     session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
-    return "<h1>You did it!</h1><p>" + session['flight'] + "</p>"
+    return "<h1>You did it!</h1><p>" + session['flightid'] + "</p>"
 
-
+# Stores information about passenger in the session for global use
 @app.route('/welcome', methods=['POST'])
 def welcome():
     conf = requests.form.confirmation 
@@ -29,18 +28,11 @@ def welcome():
 # Gets Staff info from the db, as staff might be different each flight
 @app.route('/team', methods=['GET'])
 def team():
-	print("Test flightid: " + Flight.flightid())
 	# Pull all the staffs that have the current flightid
-	for Staff in Staff.objects(flightid = Flight.flightid):
-		print("Name: ", Staff.get(name))
-		print("Role: ", Staff.get(role))
-		print("Fun fact: ", Staff.get(funfact))
-	
-	staffs = Staff.all()
-	staffs = *_dict()
+	staff = list(mongo.db.staff.find({"flightid": ObjectId[session['flightid']]}))
 
 	# session["flight"] = Flight.get(flightid)
-    return render_template('team', staffs = Staff.all())
+	return render_template('team.html', staff = staff)
 
 @app.route('/requests')
 def requests():
