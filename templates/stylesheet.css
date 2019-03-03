@@ -26,3 +26,21 @@ h6 {
 img {
 	padding-right: 3%;
 }
+
+body {
+	padding-top: 8%;
+	background-image: url("index-background.svg")
+}
+
+
+.container-ticket-confirmation {
+	background-color: #fff;
+	width: 60%;
+	margin: auto;
+	text-align: center;
+ 	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px 50px 85px 50px;
+	padding: 10% 50px 10% 0px;
+	
+}

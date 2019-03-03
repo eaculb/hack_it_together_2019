@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<title>Welcome Page</title>
+
+<body>
+	<div class="container-ticket-confirmation">
+		<div class="ticket_confirmation">
+			<form action="{{url_for('welcome')}}" method="POST">
+				<b>Ticket Confirmation #:<b><br><input type="text" name="conf"><br><br>
+
+			</form>
+		</div>
+		<div class = "ticket_number">
+		    <input type="submit" value="Confirm Ticket!">
+		</div>
+	</div>
+</body>
+
+</html>
