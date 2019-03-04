@@ -1,4 +1,4 @@
-@font-face { font-family: din; font-weight: regular; src: url('din1451alt.ttf'); }
+@font-face { font-family: din; font-weight: regular; src: url('../static/din1451alt.ttf'); }
 
 h1 {
 	background-color: #013E7D;

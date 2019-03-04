@@ -1,2 +1,4 @@
-/venv/*
-/personal/*
+venv/
+personal/*
+__pycache__/
+.gitignore
