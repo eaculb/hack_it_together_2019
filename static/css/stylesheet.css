@@ -29,7 +29,8 @@ img {
 
 body {
 	padding-top: 8%;
-	background-image: url("../index-background.svg")
+	background-image: url("../index-background.svg");
+	font-family: din;
 }
 
 .tblogo {
@@ -38,14 +39,22 @@ body {
 
 #submit {
 	background-color: #004990;
+	font-size: 20px;
 	border: none;
-	height: 50px;
-	width: 40%;
+	height: 60px;
+	width: 50%;
 	color: #fff;
 	border-radius: 13px;
 }
 
+input[type=text] {
+	height: 40px;
+	width: 45%;
+}
+
 .container-ticket-confirmation {
+	font-size: 20px;
+	font-family: din, sans-serif;
 	background-color: #fff;
 	width: 60%;
 	margin: auto;
