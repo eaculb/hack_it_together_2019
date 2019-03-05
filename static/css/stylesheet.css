@@ -33,6 +33,15 @@ body {
 	font-family: din;
 }
 
+.footer {
+	font-size: 14px;
+	color: #fff;
+	padding: 50px;
+	position: absolute; 
+	bottom: 5px;
+	text-align: center;
+}
+
 .tblogo {
 	padding-bottom: 30px;
 }
