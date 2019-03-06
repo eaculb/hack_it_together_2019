@@ -1,18 +1,19 @@
-{% extends "temp_template.html" %}
+{% extends "welcome_template.html" %}
 
 {% block body %}
 
 
 <div class="navigator">
-	<ul>
-	    <li> <a href = "{{url_for('welcome')}}" href= "#homepage"> Home </a> </li>
-	    <li> <a href = "{{url_for('team')}}"> Team </a> </li>
-	    <li> <a href = "{{url_for('requests')}}"> Request Assistance </a> </li>
-	</ul>
+    <ul> <a href = "{{url_for('welcome')}}"> Home </a> </ul>
+    <ul> <a href = "{{url_for('team')}}"> Team </a> </ul>
+    <ul> <a href = "{{url_for('requests')}}"> Request Assistance </a> </ul>
 </div>
 
-<div class="container">
-</div>
 
 
 {% endblock %}
+
+<!-- TODO: solidy nav bar to the top, keep the Hello, {{name}} at the top left
+	 TODO: on this page, remove "home" link
+	 TODO: "Meet your Team", "Request Assistance", "Feedback" with images
+-->
