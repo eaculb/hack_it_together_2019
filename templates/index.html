@@ -2,6 +2,7 @@
 <html lang="en">
 
 <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/stylesheet.css')}}"> 
+
 <title>Welcome</title>
 
 <body>
@@ -21,15 +22,14 @@
 
 		<div class="ticket_confirmation">
 			<form action="{{url_for('welcome')}}" method="POST">
-				<b>Ticket Confirmation #:<b><br><br><input type="text" name="conf"><br><br>	
+				Ticket Confirmation #:<br><br><input type="text" name="conf"><br><br>	
 				<button name="submit" id="submit" type="submit"><b>Confirm Ticket!<b></button>
 			</form>
 		</div>	
+	</div>
 </body>
 
 <!-- Footer -->
-<div class="footer" style="text-align: center">
-	<span><center>Powered by jetBlue</center></span>
-</div>
+<footer> Powered by jetBlue </footer>
 
 </html>
