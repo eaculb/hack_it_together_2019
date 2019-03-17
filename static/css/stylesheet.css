@@ -1,10 +1,5 @@
 @font-face { font-family: din; font-weight: regular; src: url('../din1451alt.ttf'); }
 
-h1 {
-	color: white;
-	text-align: center;
-	font-family: din, sans-serif;
-}
 
 h6 {
 	color: white;
@@ -12,10 +7,6 @@ h6 {
 	font-family: din, sans-serif;
 }
 
-body {
-	background-image: url("../index-background.svg");
-	font-family: din;
-}
 
 #submit {
 	background-color: #004990;
@@ -37,6 +28,11 @@ input[type=text] {
 
 
 /** Present in welcome.html, index.html, attendees.html **/
+body {
+	background-image: url("../index-background.svg");
+	font-family: din;
+}
+
 .tblogo {
 	padding-bottom: 30px;
 }
@@ -95,7 +91,7 @@ input[type=text] {
 	font-size: 20px;
 }
 
-.welcome-page {
+.welcome-page, .container.team-page  {
 	padding-top: 50px;
 }
 
@@ -127,4 +123,44 @@ input[type=text] {
 
 #navbarSupportedContent .navbar-nav a.current-page {
 	color: #fe9500;
+}
+
+.container.team-page .jumbotron {
+	background-color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+h1 {
+	color: #004990;
+	text-align: center;
+	font-family: din, sans-serif;
+	padding-bottom: 30px;
+}
+
+.team-photos {
+	float: left;
+	height : 242px;
+	width : 242px;
+}
+
+.container .team-info {
+	padding-bottom: 7%;
+}
+
+.team-details  {
+	display: flow-root;
+	font-size: 18px;
+}
+
+.team-details span {
+	display: inline-block;
+}
+
+.footer a {
+	color: #fe9500;
+}
+
+.navbar .navbar-brand {
+	text-align: center;
 }
