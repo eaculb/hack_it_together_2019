@@ -36,7 +36,7 @@ input[type=text] {
 
 
 
-/** Present in welcome.html, index.html **/
+/** Present in welcome.html, index.html, attendees.html **/
 .tblogo {
 	padding-bottom: 30px;
 }
@@ -78,9 +78,10 @@ input[type=text] {
 }
 
 .navbar{
-	padding-top: 20px;
+	position: inherit;
+	padding-top: 5px;
 	font-size: 20px;
-	padding-bottom: 20px;	
+	padding-bottom: 5px;	
 }
 
 .navbar-brand {
@@ -95,11 +96,11 @@ input[type=text] {
 }
 
 .welcome-page {
-	padding-top: 190px;
+	padding-top: 50px;
 }
 
 .row {
-	padding-bottom: 60px;
+	padding-bottom: 40px;
 }
 
 .card-icons {
@@ -122,4 +123,8 @@ input[type=text] {
 
 .card-link:hover:not(.current) {
 	color: #004990;
+}
+
+a.current-page{
+	color: #fff;
 }
