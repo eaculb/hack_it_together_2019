@@ -125,6 +125,6 @@ input[type=text] {
 	color: #004990;
 }
 
-a.current-page{
-	color: #fff;
+#navbarSupportedContent .navbar-nav a.current-page {
+	color: #fe9500;
 }
