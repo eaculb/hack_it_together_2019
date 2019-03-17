@@ -5,14 +5,15 @@
 	<title>Welcome</title>
 
 	{% block styles %}
+	{{ super() }}
 	<link href="{{url_for('static',filename='css/stylesheet.css')}}" rel="stylesheet">
 	{% endblock styles %} 
 {% endblock head %}
 
 {% block body_attribs %} class="index-body text-center"{% endblock %}{% block body %}
 	{{ super() }}
-	<div class="container ticket-confirmation">
-		<img class="tblogo" src="{{url_for('static',filename='trueblue_logo.png')}}" alt="TrueBlue Logo" width="160px" height="40px">
+	<div class="container ticket-confirmation mt-5 pt-4">
+		<img class="tblogo mt-5 pb-4" src="{{url_for('static',filename='img/trueblue_logo.png')}}" alt="TrueBlue Logo" width="230px" height="80px">
 
 		{% with messages = get_flashed_messages() %}
 		  {% if messages %}
@@ -24,7 +25,7 @@
 		  {% endif %}
 		{% endwith %}
 
-		<div class="ticket_confirmation">
+		<div class="ticket-submit mt-2 mb-5 pb-5">
 			<form action="{{url_for('welcome')}}" method="POST">
 				Ticket Confirmation #:<br><br><input type="text" name="conf"><br><br>
 				<button name="submit" id="submit" type="submit"><b>Confirm Ticket!</b></button>
@@ -32,7 +33,8 @@
 		</div>
 	</div>
 
-	<p class="footer"> Powered by jetBlue </p>
+	<p class="footer index mt-5"> Powered by jetBlue </p>
 {% endblock %} <!--ends the body block -->
 
-<!-- TODO: Stick footer to the end of page -->
+<!-- TODO: If there's a session, re-direct back to welcome page-->
+<!-- TODO: for-loop for Request Assistance -> Team Member # -->

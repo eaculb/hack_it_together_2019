@@ -8,6 +8,17 @@ h6 {
 }
 
 
+/** Present in welcome.html, index.html, team.html **/
+body {
+	background-image: url("../img/background.svg");
+	font-family: din;
+}
+
+input[type=text] {
+	height: 40px;
+	width: 45%;
+}
+
 #submit {
 	background-color: #004990;
 	font-size: 20px;
@@ -17,24 +28,6 @@ h6 {
 	color: #fff;
 	border-radius: 13px;
 	font-weight: bold;	
-}
-
-input[type=text] {
-	height: 40px;
-	width: 45%;
-}
-
-
-
-
-/** Present in welcome.html, index.html, attendees.html **/
-body {
-	background-image: url("../index-background.svg");
-	font-family: din;
-}
-
-.tblogo {
-	padding-bottom: 30px;
 }
 
 .footer {
@@ -56,28 +49,16 @@ body {
 	margin: auto;
 	text-align: center;
  	border-radius: 10px;
-	overflow: hidden;
-	padding-top: 15%;
-	padding: 10% 50px 10% 50px;
-	
+	overflow: hidden;	
 }
 
 .index-body {
 	transform: translateY(20%);
 }
 
-.nav-link {
-	list-style-type: none;
-	display: flex;
-	float: right;
-	padding-right: 40px;
-}
-
 .navbar{
 	position: inherit;
-	padding-top: 5px;
 	font-size: 20px;
-	padding-bottom: 5px;	
 }
 
 .navbar-brand {
@@ -91,23 +72,14 @@ body {
 	font-size: 20px;
 }
 
-.welcome-page, .container.team-page  {
-	padding-top: 50px;
-}
-
-.row {
-	padding-bottom: 40px;
-}
-
 .card-icons {
 	width: 6rem;
 	min-height: 192.7px;
 	max-height: 192.7px;
 	margin: auto;
-	padding-top: 5px;
 
 }
-/** TODO: Fix the max/min width for the card grids **/
+
 .card {
 	min-width: 330px;
 	max-width: 400px;
@@ -127,25 +99,18 @@ body {
 
 .container.team-page .jumbotron {
 	background-color: white;
-	padding-top: 30px;
-	padding-bottom: 30px;
 }
 
 h1 {
 	color: #004990;
 	text-align: center;
 	font-family: din, sans-serif;
-	padding-bottom: 30px;
 }
 
 .team-photos {
 	float: left;
 	height : 242px;
 	width : 242px;
-}
-
-.container .team-info {
-	padding-bottom: 7%;
 }
 
 .team-details  {

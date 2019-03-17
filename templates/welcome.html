@@ -14,16 +14,16 @@
 {% block body %}
 {{ super() }}
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #fff;">
-    	<img src="{{url_for('static',filename='Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
+    	<img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
     	<a class="navbar-brand mx-auto">Hello, {{name}}!</a>
     </nav>
 
 
-    <div class="container welcome-page">
-		<div class="row">
+    <div class="container welcome-page mt-5">
+		<div class="row pb-4 mt-2">
 		    <div class="col">
 		        <div class="card">
-		        	<img class="card-icons" src="{{url_for('static',filename='octicons/info.svg')}}">
+		        	<img class="card-icons pt-2" src="{{url_for('static',filename='octicons/info.svg')}}">
 		            <div class="card-body text-center">
 		                <h3 class="card-title"><a class="card-link" href="#">Flight Info</a></h3>
 		            </div>
@@ -39,7 +39,7 @@
 		    </div>
 		</div>
 
-		<div class="row">
+		<div class="row pb-4 mt-3">
 		    <div class="col">
 		        <div class="card">
 		        	<img class="card-icons" src="{{url_for('static',filename='octicons/question.svg')}}">
@@ -59,7 +59,8 @@
 		</div>
     </div>
 
-    <p class="footer"> Powered by jetBlue </p>
+    <p class="footer pt-1"> Powered by jetBlue </p>
 {% endblock %}
 
 <!-- TODO: Page link for Flight Info and Give Feedback -->
+<!-- TODO: Fix container. Looks bad in full screen -->
