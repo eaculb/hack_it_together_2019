@@ -50,7 +50,7 @@ def team():
 	for person in staff_res:
 		staff.append(person)
 	# session["flight"] = Flight.get(flightid)
-	return render_template('attendees.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+	return render_template('team.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/requests')
 def requests():
