@@ -1,0 +1,38 @@
+{% extends "bootstrap/base.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block head %}
+	<title>Welcome</title>
+
+	{% block styles %}
+	<link href="{{url_for('static',filename='css/stylesheet.css')}}" rel="stylesheet">
+	{% endblock styles %} 
+{% endblock head %}
+
+{% block body_attribs %} class="index-body text-center"{% endblock %}{% block body %}
+	{{ super() }}
+	<div class="container ticket-confirmation">
+		<img class="tblogo" src="{{url_for('static',filename='trueblue_logo.png')}}" alt="TrueBlue Logo" width="160px" height="40px">
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    <ul class=flashes style="color:#d50f0f">
+		    {% for message in messages %}
+		      <p>{{ message }}</p>
+		    {% endfor %}
+		    </ul>
+		  {% endif %}
+		{% endwith %}
+
+		<div class="ticket_confirmation">
+			<form action="{{url_for('welcome')}}" method="POST">
+				Ticket Confirmation #:<br><br><input type="text" name="conf"><br><br>
+				<button name="submit" id="submit" type="submit"><b>Confirm Ticket!</b></button>
+			</form>
+		</div>
+	</div>
+
+	<p class="footer"> Powered by jetBlue </p>
+{% endblock %} <!--ends the body block -->
+
+<!-- TODO: Stick footer to the end of page -->

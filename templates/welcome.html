@@ -1,0 +1,65 @@
+{% extends "bootstrap/base.html" %} 
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block head %}
+	<title>JetBlue Concierge</title>
+
+	{% block styles %}
+	{{ super() }}
+	<link href="{{url_for('static',filename='css/stylesheet.css')}}" rel="stylesheet">
+	{% endblock styles %} 
+{% endblock head %}
+
+
+{% block body %}
+{{ super() }}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #fff;">
+    	<img src="{{url_for('static',filename='Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
+    	<a class="navbar-brand mx-auto">Hello, {{name}}!</a>
+    </nav>
+
+
+    <div class="container welcome-page">
+		<div class="row">
+		    <div class="col">
+		        <div class="card">
+		        	<img class="card-icons" src="{{url_for('static',filename='octicons/info.svg')}}">
+		            <div class="card-body text-center">
+		                <h3 class="card-title"><a class="card-link" href="#">Flight Info</a></h3>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="col">
+		        <div class="card">
+		        	<img class="card-icons" src="{{url_for('static',filename='octicons/organization.svg')}}">
+		            <div class="card-body text-center">
+		                <h3 class="card-title"><a class="card-link" href="{{url_for('team')}}">Meet the Team</a></h3>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<div class="row">
+		    <div class="col">
+		        <div class="card">
+		        	<img class="card-icons" src="{{url_for('static',filename='octicons/question.svg')}}">
+		            <div class="card-body text-center">
+		                <h3 class="card-title"><a class="card-link" href="{{url_for('requests')}}">Request Assistance</a></h3>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="col">
+		        <div class="card">
+		        	<img class="card-icons" src="{{url_for('static',filename='octicons/comment-discussion.svg')}}">
+		            <div class="card-body text-center">
+		                <h3 class="card-title"><a class="card-link" href="#">Give Feedback</a></h3>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+
+    <p class="footer"> Powered by jetBlue </p>
+{% endblock %}
+
+<!-- TODO: Page link for Flight Info and Give Feedback -->
