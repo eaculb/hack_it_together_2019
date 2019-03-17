@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, flash
 from flask_pymongo import PyMongo, ObjectId
+from flask_bootstrap import Bootstrap
 from datetime import datetime
 import random
 from models import *
 import json
 
 # Init processes
-
 app = Flask(__name__)
+Bootstrap(app)
 # app.register_error_handler(404, page_not_found)
 app.config['MONGO_URI'] = "mongodb://eac:sfmlab1107@ds159025.mlab.com:59025/hackit_jetblue"
 mongo = PyMongo(app)
