@@ -5,6 +5,7 @@ from flask_bootstrap import Bootstrap
 from datetime import datetime
 import random
 from models import *
+from snacks_drinks import *
 import json
 
 # Init processes
@@ -54,7 +55,7 @@ def team():
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html',  staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+    return render_template('requests.html', SNACKS_LIST = SNACKS_LIST, DRINKS_LIST = DRINKS_LIST, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
