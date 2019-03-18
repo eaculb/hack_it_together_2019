@@ -1,9 +1,12 @@
-
 {% extends "bootstrap/base.html" %} 
 {% block html_attribs %} lang="en"{% endblock %}
 
 {% block head %}
 	<title>Make a Request</title>
+
+	{% block javascript %}
+	<script type="text/javascript" src="{{url_for('static',filename='scripts.js')}}"></script>
+	{% endblock javascript %}
 
 	{% block styles %}
 	{{ super() }}
@@ -13,53 +16,112 @@
 
 {% block body %}
 {{ super() }}
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #fff;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
     	<img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
-    	<a class="navbar-brand mx-auto">Hello, {{name}}!</a>
-    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    	<a class="navbar-brand">How can we help, {{name}}?</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
 
     	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     		<ul class="navbar-nav ml-auto">
-				<a class="nav-link" href="{{url_for('welcome')}}"">Home</a>
+				<a class="nav-link" href="{{url_for('welcome')}}">Home</a>
 				<a class="nav-link" href="#">Flight Info</a>
 				<a class="nav-link" href="{{url_for('team')}}">Meet the Team</a>
 				<a class="nav-link" href="#">Give Feedback</a>
-				<a class="nav-link dropdown-toggle current-page" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Request Assistance
-				</a>
-				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Any Team Member</a>
-					
-					<!-- Populates the staff members and adds them to
-						the dropdown for Request Assistance. The pilot
-						does not get added -->
-					{% for staff in staffmembers %}
-						{%if staff.role != "pilot" %}
-					<a class="dropdown-item" href="#"> {{staff.name}} </a>	
-						{% endif %}
-					{% endfor %}
-				</div>
+
+				<ul class="nav-item dropdown pl-1">
+					<a class="nav-link dropdown-toggle current-page" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Request Assistance
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{{url_for('requests')}}">Any Team Member</a>
+						
+						{# Populates the staff members and adds them to the dropdown for Request Assistance. The pilot does not get added #}
+
+						{% for staff in staffmembers %}
+							{%if staff.role != "pilot" %}
+						<a class="dropdown-item" href="#"> {{staff.name}} </a>	
+							{% endif %}
+						{% endfor %}
+					</div>
+				</ul>
     		</ul>
     	</div>
-    </nav>
+    </nav>	
+
+	<main role="main" class="container request-page mt-5">
+		<div class="jumbotron pt-4 pb-5">
+			<h1> Make a Request </h1>
+		    <form>
+		    	{# --------- CARD #1: REQUEST SNACKS  --------- #}
+		    	<div class="accordion" id="accordion">
+					<div class="card">
+					    <div class="card-header" id="headingOne">
+			          		<h4 class="text-center pb-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Request Snacks <i class="fas fa-chevron-down"></i></h4>
+			          		
+				        </div>
+
+				        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+						    <div class="card-body">
+						        <div class="request dropdown mt-3 mb-4">
+				    
+
+				    {# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
+
+							    {# SNACKS LIST: #}
+							    {% for snack in SNACKS_LIST  %}
+								    <div class="form-check form-check-inline snacks pb-3">
+									    <input class="form-check-input" type="checkbox" name="snack-{{loop.index}}" id="snack-{{loop.index}}"> 
+									    <label class="form-check-label" for="snack-{{loop.index}}">{{snack}}</label>
+									</div>
+								{% endfor %}
+							    </div>
+							</div>
+						</div>
+					</div>
+
+					{# --------- CARD #2: REQUEST DRINKS --------- #}
+
+					<div class="card">
+					    <div class="card-header" id="headingTwo">
+			          		<h4 class="text-center pb-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo""> Request Drinks 
+			          			<img src="{{url_for('static', filename='octicons/chevron-down.svg')}}" width="30" height="30" class="d-inline-block" >
+			          		</h4>
+				        </div>
+
+				        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						    <div class="card-body">
+						        <div class="request dropdown mt-3 mb-4">
+				    
+
+				    {# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
+
+							    {# DRINKS LIST: #}
+							    {% for drink in DRINKS_LIST  %}
+								    <div class="form-check form-check-inline drinks pb-3">
+									    <input class="form-check-input" type="checkbox" name="drink-{{loop.index}}" id="drink-{{loop.index}}"> 
+									    <label class="form-check-label" for="drink-{{loop.index}}">{{drink}}</label>
+									</div>
+								{% endfor %}
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				    {# if question -> ask 
+				    <div class="pt-5" id="question">What's your question:
+				        <input type="text" name="asked"/>
+				    </div> #}
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<p class="footer"> Powered by jetBlue &nbsp; | &nbsp; <a href="#">To the top</a></p>
+
+    
 {% endblock %}
 
-<div class="w3-row-padding w3-center w3-margin-top">
-<form id="requests" class="w3-full" method=POST action="{{ url_for('submit_request') }}">
-	<div class="w3-card w3-container w3-left-align">
-		<h3> You are in seat {{seat}}. Your team member is {{team_member}}.</h3>
-		<h1> What can we help you with?</h1>
-		    <textarea id="need" form="requests" class="w3-text" type="text" placeholder="Type any request here!" style="width:90%;height:60px"></textarea>
-		    <div class="w3-section">      
-          		<input type="submit" value="Submit">
-    		</div>
-		    <div class="w3-row-padding w3-center w3-margin-top">
-		  </div>
-	</div>
-</form>
-<div class="w3-row-padding w3-center w3-margin-bottom">
-
-
-
+<!-- TODO: Fix icon for accordion div -->
