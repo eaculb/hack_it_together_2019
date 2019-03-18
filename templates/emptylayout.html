@@ -66,3 +66,21 @@ if(member[role] == "Crew Member")
   <h1 class="w3-xxxlarge"><b><center>Hello, {{name}}!</center></b></h1>
     <h6><center>You are in seat {{seat}}. We're so glad you're here!</center></h6>
 </header>
+
+
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<form id="requests" class="w3-full" method=POST action="{{ url_for('submit_request') }}">
+  <div class="w3-card w3-container w3-left-align">
+    <h3> You are in seat {{seat}}. Your team member is {{team_member}}.</h3>
+    <h1> What can we help you with?</h1>
+        <textarea id="need" form="requests" class="w3-text" type="text" placeholder="Type any request here!" style="width:90%;height:60px"></textarea>
+        <div class="w3-section">      
+              <input type="submit" value="Submit">
+        </div>
+        <div class="w3-row-padding w3-center w3-margin-top">
+      </div>
+  </div>
+</form>
+<div class="w3-row-padding w3-center w3-margin-bottom">
