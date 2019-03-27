@@ -53,8 +53,7 @@
 	<main role="main" class="container request-page mt-5">
 		<div class="jumbotron pt-4 pb-5">
 			<h1> Make a Request </h1>
-		    <form>
-		    	
+		    <form>		    	
 		    	<div id="accordion" class="accordion">
 
 		    		{# --------- CARD #1: REQUEST SNACKS  --------- #}
@@ -69,7 +68,7 @@
 						        <div class="request dropdown mt-3 mb-4">
 				    
 
-				    {# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
+				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
 							    {# SNACKS LIST: #}
 							    {% for snack in SNACKS_LIST  %}
@@ -87,7 +86,6 @@
 					<div class="card mb-0">
 			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwo">
 			          		<h4 class="card-title text-center pb-2"> Request Drinks <i class="fas"></i></h4>
-			          		
 				        </div>
 
 				        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -95,7 +93,7 @@
 						        <div class="request dropdown mt-3 mb-4">
 				    
 
-				    {# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
+				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
 							    {# DRINKS LIST: #}
 							    {% for drink in DRINKS_LIST  %}
@@ -108,13 +106,38 @@
 							</div>
 						</div>
 					</div>
+
+
+					{# --------- CARD #3: REQUEST PAID ITEAMS --------- #}
+					<div class="card mb-0">
+			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseThree">
+			          		<h4 class="card-title text-center pb-2"> Purchase Items <i class="fas"></i></h4>
+				        </div>
+
+				        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						    <div class="card-body">
+						        <div class="request dropdown mt-3 mb-4">
+				    
+				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
+
+							    {# PAID ITEMS LIST: #}
+							    {% for pitems in PAID_ITEMS_LIST %}
+								    <div class="form-check form-check-inline pitems pb-3">
+									    <input class="form-check-input" type="checkbox" name="pitems-{{loop.index}}" id="pitems-{{loop.index}}"> 
+									    <label class="form-check-label" for="pitems-{{loop.index}}">{{pitems}}</label>
+									</div>
+								{% endfor %}
+							    </div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				    {# if question -> ask 
 				    <div class="pt-5" id="question">What's your question:
 				        <input type="text" name="asked"/>
 				    </div> #}
-				</div>
+				
 			</form>
 		</div>
 	</main>

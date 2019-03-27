@@ -139,9 +139,15 @@ h1 {
 
 .accordion .card-header:before {
     font-family: 'FontAwesome';  
+    font-weight: bold;
+    font-size: 23px;
     content: "\f106";
     float: right; 
 }
 .accordion .card-header.collapsed:before {
     content: "\f107"; 
+}
+
+label.form-check-label {
+	font-size: 22px;
 }
