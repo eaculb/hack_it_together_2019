@@ -28,3 +28,9 @@ DRINKS_LIST = [
 	"Dunkin Black Tea",
 	"Green Tea"
 	]
+
+PAID_ITEMS_LIST = [
+	"Pillow ($6)",
+	"Blanket ($5)",
+	"Snooze Kit ($20)"
+	]
