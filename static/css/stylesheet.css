@@ -136,3 +136,12 @@ h1 {
 .card {
 	max-width: 100%;
 }
+
+.accordion .card-header:before {
+    font-family: 'FontAwesome';  
+    content: "\f106";
+    float: right; 
+}
+.accordion .card-header.collapsed:before {
+    content: "\f107"; 
+}

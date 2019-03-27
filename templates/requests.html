@@ -54,11 +54,13 @@
 		<div class="jumbotron pt-4 pb-5">
 			<h1> Make a Request </h1>
 		    <form>
-		    	{# --------- CARD #1: REQUEST SNACKS  --------- #}
-		    	<div class="accordion" id="accordion">
-					<div class="card">
-					    <div class="card-header" id="headingOne">
-			          		<h4 class="text-center pb-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Request Snacks <i class="fas fa-chevron-down"></i></h4>
+		    	
+		    	<div id="accordion" class="accordion">
+
+		    		{# --------- CARD #1: REQUEST SNACKS  --------- #}
+			        <div class="card mb-0">
+			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+			          		<h4 class="card-title text-center pb-2"> Request Snacks <i class="fas"></i></h4>
 			          		
 				        </div>
 
@@ -82,12 +84,10 @@
 					</div>
 
 					{# --------- CARD #2: REQUEST DRINKS --------- #}
-
-					<div class="card">
-					    <div class="card-header" id="headingTwo">
-			          		<h4 class="text-center pb-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo""> Request Drinks 
-			          			<img src="{{url_for('static', filename='octicons/chevron-down.svg')}}" width="30" height="30" class="d-inline-block" >
-			          		</h4>
+					<div class="card mb-0">
+			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwo">
+			          		<h4 class="card-title text-center pb-2"> Request Drinks <i class="fas"></i></h4>
+			          		
 				        </div>
 
 				        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
