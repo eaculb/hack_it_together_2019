@@ -1,12 +1,9 @@
 {% extends "bootstrap/base.html" %} 
+
 {% block html_attribs %} lang="en"{% endblock %}
 
 {% block head %}
 	<title>Make a Request</title>
-
-	{% block javascript %}
-	<script type="text/javascript" src="{{url_for('static',filename='scripts.js')}}"></script>
-	{% endblock javascript %}
 
 	{% block styles %}
 	{{ super() }}
@@ -40,8 +37,8 @@
 						{# Populates the staff members and adds them to the dropdown for Request Assistance. The pilot does not get added #}
 
 						{% for staff in staffmembers %}
-							{%if staff.role != "pilot" %}
-						<a class="dropdown-item" href="#"> {{staff.name}} </a>	
+							{% if staff.role != "pilot" %}
+						<a class="dropdown-item" href="{{url_for('requests')}}"> {{staff.name}} </a>	
 							{% endif %}
 						{% endfor %}
 					</div>
@@ -108,7 +105,7 @@
 					</div>
 
 
-					{# --------- CARD #3: REQUEST PAID ITEAMS --------- #}
+					{# --------- CARD #3: REQUEST PAID ITEMS --------- #}
 					<div class="card mb-0">
 			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseThree">
 			          		<h4 class="card-title text-center pb-2"> Purchase Items <i class="fas"></i></h4>
@@ -121,10 +118,10 @@
 				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
 							    {# PAID ITEMS LIST: #}
-							    {% for pitems in PAID_ITEMS_LIST %}
-								    <div class="form-check form-check-inline pitems pb-3">
-									    <input class="form-check-input" type="checkbox" name="pitems-{{loop.index}}" id="pitems-{{loop.index}}"> 
-									    <label class="form-check-label" for="pitems-{{loop.index}}">{{pitems}}</label>
+							    {% for purchase in PURCHASE_LIST %}
+								    <div class="form-check form-check-inline purchase pb-3">
+									    <input class="form-check-input" type="checkbox" name="purchase-{{loop.index}}" id="purchase-{{loop.index}}"> 
+									    <label class="form-check-label" for="purchase-{{loop.index}}">{{purchase}}</label>
 									</div>
 								{% endfor %}
 							    </div>
@@ -133,11 +130,8 @@
 					</div>
 				</div>
 
-				    {# if question -> ask 
-				    <div class="pt-5" id="question">What's your question:
-				        <input type="text" name="asked"/>
-				    </div> #}
-				
+
+
 			</form>
 		</div>
 	</main>
