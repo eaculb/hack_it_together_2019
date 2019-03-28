@@ -55,7 +55,12 @@ def team():
 
 @app.route('/requests')
 def requests():
-    return render_template('requests.html', SNACKS_LIST = SNACKS_LIST, DRINKS_LIST = DRINKS_LIST, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+	staff_res = (mongo.db.staff.find({"flightid": ObjectId(session['flightid'])}))
+	staff = []
+	for person in staff_res:
+		staff.append(person)
+    return render_template('requests.html', staffmembers = staff, PURCHASE_LIST = PURCHASE_LIST, SNACKS_LIST = SNACKS_LIST\
+    	, DRINKS_LIST = DRINKS_LIST, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
