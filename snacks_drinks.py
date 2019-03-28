@@ -6,6 +6,12 @@ SNACKS_LIST = [
 	"TERRA Sweets & Blues potato chips"
 	]
 
+PURCHASE_LIST = [
+	"Pillow ($6)",
+	"Blanket ($5)",
+	"Snooze Kit ($20)"
+	]
+
 DRINKS_LIST = [
 	"Coke",
 	"Diet Coke",
@@ -29,8 +35,3 @@ DRINKS_LIST = [
 	"Green Tea"
 	]
 
-PAID_ITEMS_LIST = [
-	"Pillow ($6)",
-	"Blanket ($5)",
-	"Snooze Kit ($20)"
-	]
