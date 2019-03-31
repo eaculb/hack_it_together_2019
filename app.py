@@ -5,7 +5,6 @@ from flask_bootstrap import Bootstrap
 from datetime import datetime
 import random
 from models import *
-from snacks_drinks import *
 import json
 
 # Init processes
@@ -59,8 +58,11 @@ def requests():
 	staff = []
 	for person in staff_res:
 		staff.append(person)
-    return render_template('requests.html', staffmembers = staff, PURCHASE_LIST = PURCHASE_LIST, SNACKS_LIST = SNACKS_LIST\
-    	, DRINKS_LIST = DRINKS_LIST, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+
+	# Passes the JSON file with the list of in-flight items to requests.html	
+	data = json.load(open('static/items.json'))
+
+	return render_template('requests.html', data=data, staffmembers = staff, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
