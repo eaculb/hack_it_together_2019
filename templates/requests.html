@@ -48,16 +48,15 @@
     </nav>	
 
 	<main role="main" class="container request-page mt-5">
-		<div class="jumbotron pt-4 pb-5">
-			<h1> Make a Request </h1>
+		<div class="jumbotron pt-4 ">
+			<h1 class="mb-3"> Make a Request </h1>
 		    <form>		    	
-		    	<div id="accordion" class="accordion">
+		    	<div id="accordion" class="accordion mb-3">
 
 		    		{# --------- CARD #1: REQUEST SNACKS  --------- #}
 			        <div class="card mb-0">
 			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
 			          		<h4 class="card-title text-center pb-2"> Request Snacks <i class="fas"></i></h4>
-			          		
 				        </div>
 
 				        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -130,9 +129,44 @@
 							</div>
 						</div>
 					</div>
+
+					{# --------- CARD #4: OTHER --------- #}
+					<div class="card mb-0">
+			            <div class="card-header collapsed" data-toggle="collapse" href="#collapseFour">
+			          		<h4 class="card-title text-center pb-2"> Other <i class="fas"></i></h4>
+				        </div>
+
+
+				        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						    <div class="card-body">
+						        <div class="request dropdown mt-3 mb-4">
+
+								    <div class="form-specify-other">
+									    <textarea name="textarea" style = "width: 100%; height:150px;" placeholder="Tell us how we may assist you ..."></textarea> 
+									</div>
+
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div> {# end of accordion class #}
+
+				<div class="form-select-helper mb-4">
+					<span class="request-helper"> Request Assistance From: </span>
+					<select name="helper">
+						<option value="AnyMember"> Any Crew Member</option>
+
+						{% for staff in staffmembers %}
+							{% if staff.role != "pilot" %}
+						<option value="{{ staff }}"> {{staff.name}} </option>	
+							{% endif %}
+						{% endfor %}
+					</select>
 				</div>
 
-
+				<div class="request-help-button">
+					<button name="submit" id="submit" type="submit"><b>Submit Request</b></button>
+				</div>
 
 			</form>
 		</div>
