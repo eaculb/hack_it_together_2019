@@ -25,23 +25,7 @@
 				<a class="nav-link" href="#">Flight Info</a>
 				<a class="nav-link current-page" href="{{url_for('team')}}">Meet the Team</a>
 				<a class="nav-link" href="#">Give Feedback</a>
-
-				<ul class="nav-item dropdown pl-1">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Request Assistance
-					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="{{url_for('requests')}}">Any Team Member</a>
-
-						{# Populates the staff members and adds them to the dropdown for Request Assistance. The pilot does not get added #}
-							
-						{% for staff in staffmembers %}
-							{%if staff.role != "pilot" %}
-						<a class="dropdown-item" href="#"> {{staff.name}} </a>	
-							{% endif %}
-						{% endfor %}
-					</div>
-				</ul>
+				<a class="nav-link" href="{{url_for('requests')}}">Request Assistance </a>
     		</ul>
     	</div>
     </nav>
