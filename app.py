@@ -3,22 +3,20 @@ from flask import Flask, render_template, url_for, request, session, redirect, j
 from flask_pymongo import PyMongo, ObjectId
 from flask_bootstrap import Bootstrap
 from datetime import datetime
-import random
 from models import *
-import json
+import random, json, config
 
 # Init processes
 app = Flask(__name__)
 Bootstrap(app)
-# app.register_error_handler(404, page_not_found)
-app.config['MONGO_URI'] = "mongodb://eac:sfmlab1107@ds159025.mlab.com:59025/hackit_jetblue"
+app.config['MONGO_URI'] = config.mongoDBURL
 mongo = PyMongo(app)
 
 # Routes
 @app.route('/')
 def index():
 	# We are hardcoding this to be our one toy flight
-    session['flightid'] = "5c7c21f3dd5f613e4b3baf40"
+    session['flightid'] = config.flightID
     return render_template('index.html')
 
 
@@ -49,7 +47,6 @@ def team():
 	staff = []
 	for person in staff_res:
 		staff.append(person)
-	# session["flight"] = Flight.get(flightid)
 	return render_template('team.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/requests')
@@ -74,5 +71,5 @@ def submit_request():
     return redirect(url_for('welcome'))
 
 if __name__ == '__main__':
-    app.config["SECRET_KEY"] = "hackit!!!"
+    app.config["SECRET_KEY"] = config.secretKey
     app.run('localhost', 8080, debug=True)
