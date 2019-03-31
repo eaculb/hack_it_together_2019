@@ -67,8 +67,10 @@
 
 				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
+
 							    {# SNACKS LIST: #}
-							    {% for snack in SNACKS_LIST  %}
+							    {% for snack in data["snacks"] %}
+
 								    <div class="form-check form-check-inline snacks pb-3">
 									    <input class="form-check-input" type="checkbox" name="snack-{{loop.index}}" id="snack-{{loop.index}}"> 
 									    <label class="form-check-label" for="snack-{{loop.index}}">{{snack}}</label>
@@ -93,7 +95,7 @@
 				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
 							    {# DRINKS LIST: #}
-							    {% for drink in DRINKS_LIST  %}
+							    {% for drink in data["drinks"]  %}
 								    <div class="form-check form-check-inline drinks pb-3">
 									    <input class="form-check-input" type="checkbox" name="drink-{{loop.index}}" id="drink-{{loop.index}}"> 
 									    <label class="form-check-label" for="drink-{{loop.index}}">{{drink}}</label>
@@ -118,7 +120,7 @@
 				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
 							    {# PAID ITEMS LIST: #}
-							    {% for purchase in PURCHASE_LIST %}
+							    {% for purchase in data["paid_items"] %}
 								    <div class="form-check form-check-inline purchase pb-3">
 									    <input class="form-check-input" type="checkbox" name="purchase-{{loop.index}}" id="purchase-{{loop.index}}"> 
 									    <label class="form-check-label" for="purchase-{{loop.index}}">{{purchase}}</label>
