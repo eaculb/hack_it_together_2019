@@ -153,10 +153,10 @@ label.form-check-label {
 }
 
 .form-select-helper {
-	float: right;
+	text-align: right;
 }
 
-.request-help-button {
+.button-wrapper {
 	text-align: center;
 }
 
