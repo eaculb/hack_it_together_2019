@@ -19,7 +19,7 @@ input[type=text] {
 	width: 45%;
 }
 
-#submit {
+#submit, #submit-modal {
 	background-color: #004990;
 	font-size: 20px;
 	border: none;
@@ -148,7 +148,7 @@ h1 {
     content: "\f107"; 
 }
 
-label.form-check-label {
+label.form-check-label, .modal-body {
 	font-size: 22px;
 }
 
@@ -162,4 +162,5 @@ label.form-check-label {
 
 .request-helper {
 	font-size: 18px;
+}
 }
