@@ -163,4 +163,41 @@ label.form-check-label, .modal-body {
 .request-helper {
 	font-size: 18px;
 }
+
+.text-rating-left {
+	float: left;
+}
+
+.text-rating-right {
+	float: right;
+}
+
+.likely-rating {
+	display: flow-root;
+}
+
+.scale span {
+	display: inline-block;
+	box-sizing: border-box;
+    padding: .3em .8em;
+    font-size: 26px;
+    font-weight:100;
+    width:2.26em;
+    background: #004990;
+    color: #eee;
+}
+
+.scale input[type="radio"] {
+    display: none;
+    border-color: #004990;
+}
+
+input[type="radio"]:checked:before {
+    	border-color: #fe9500;
+    	background-color: #004990;
+}
+
+.customer-satisfaction-survey h4 {
+	color: #004990;
+	text-align: center;
 }

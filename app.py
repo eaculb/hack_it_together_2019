@@ -47,8 +47,10 @@ def team():
 	staff = []
 	for person in staff_res:
 		staff.append(person)
+
 	return render_template('team.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
+# Request page
 @app.route('/requests')
 def requests():
 	staff_res = (mongo.db.staff.find({"flightid": ObjectId(session['flightid'])}))
@@ -64,9 +66,26 @@ def requests():
 @app.route('/submit-request', methods=['POST'])
 def submit_request():
     formdata = request.form
-    person = 'Lizzie' #TODO: fix it
-    seat = session['passenger']['seat']
-    flash('Your request has been received! ' + person + ' will be by seat ' + seat + ' shortly.')
+    # person = 'Lizzie' #TODO: fix it
+    # seat = session['passenger']['seat']
+    # flash('Your request has been received! ' + person + ' will be by seat ' + seat + ' shortly.')
+
+    return redirect(url_for('welcome'))
+
+@app.route('/feedback')
+def feedback():
+	# Pull all the staffs that have the current flightid
+	staff_res = (mongo.db.staff.find({"flightid": ObjectId(session['flightid'])}))
+	staff = []
+
+	for person in staff_res:
+		staff.append(person)
+		
+	return render_template('feedback.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+
+@app.route('/submit-feedback', methods=['POST'])
+def submit_feedback():
+    formdata = request.form
 
     return redirect(url_for('welcome'))
 
