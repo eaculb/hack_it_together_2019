@@ -15,7 +15,9 @@
 {% block body %}
 {{ super() }}
 	
+	{% block javascript %}
 	<script src="{{url_for('static', filename='scripts.js')}}"></script>
+	{% endblock javascript %}
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
     	<img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
@@ -39,7 +41,7 @@
 	<main role="main" class="container request-page mt-5">
 		<div class="jumbotron pt-4 ">
 			<h1 class="mb-3"> Make a Request </h1>
-		    <form action="{{url_for('submit_request')}}" method="POST" onsubmit="redirect( '{{url_for('welcome')}}' )">		    	
+		    <form id="request_form" action="{{url_for('submit_request')}}" method="POST">		    	
 		    	<div id="accordion" class="accordion mb-4">
 
 		    		{# --------- CARD #1: REQUEST SNACKS  --------- #}
@@ -154,23 +156,8 @@
 				</div>
 				
 				<div class="button-wrapper mt-3">
-					<button class="request-help-submit" type="submit" name="submit" id="submit-modal" data-toggle="modal" data-target="#confirmation-modal">Submit Request</button>
-
-					<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="confirmation-modalLabel" aria-hidden="true">
-					    <div class="modal-dialog" role="document">
-					    	<div class="modal-content">
-					    		<div class="modal-body">
-						        	<img src="{{url_for('static',filename='img/green-checkmark.png')}}" width="35" height="35" class="d-inline-block" alt="Form Submitted Confirmation">
-						        	<p class="pt-3 mx-4"> Your request has been submitted, {{ name }}! Someone will be over in 
-						        		<span style="color: #004990">seat {{ seat }} </span>
-						        	soon! </p>
-						        </div>
-						    </div>
-						</div>
-					</div>
+					<button class="request-help-submit" name="submit" id="submit-modal" data-toggle="modal" data-target="#confirmation-modal" type="submit" onclick="alert('Your request has been submitted, {{ name }}! \nSomeone will be over in seat {{ seat }} soon!')">Submit Request</button>
 				</div> {# end of button-wrapper #}
-
-
 			</form>
 		</div>
 	</main>
