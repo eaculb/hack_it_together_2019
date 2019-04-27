@@ -1,0 +1,23 @@
+{
+	"set-2" : [
+		"Very Satisfied",
+		"Somewhat Satisfied",
+		"Neutral",
+		"Somewhat Dissatisfied",
+		"Very Dissatisfied"
+	],
+
+	"set-3" : [
+		"Yes",
+		"Neutral",
+		"No",
+		"Did not get a chance to try them"
+	],
+	
+	"set-4" : [
+		"Yes",
+		"Neutral",
+		"No",
+		"Did not get a chance to interact with them"
+	]
+}
