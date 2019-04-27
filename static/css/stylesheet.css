@@ -176,7 +176,7 @@ label.form-check-label, .modal-body {
 	display: flow-root;
 }
 
-.scale span {
+.scale label {
 	display: inline-block;
 	box-sizing: border-box;
     padding: .3em .8em;
