@@ -177,19 +177,39 @@ label.form-check-label, .modal-body {
 }
 
 .scale label {
-	display: inline-block;
-	box-sizing: border-box;
-    padding: .3em .8em;
-    font-size: 26px;
+    padding: .3em 1em;
     font-weight:100;
-    width:2.26em;
+    width:2.59em;
     background: #004990;
-    color: #eee;
+    color: #fff;
 }
 
 .scale input[type="radio"] {
     display: none;
     border-color: #004990;
+}
+
+.scale:not(:checked) > input {
+    position:absolute;
+    clip:rect(0,0,0,0);
+}
+
+.scale:not(:checked) > label {
+    overflow:hidden;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+}
+
+/* shows stars */
+.scale:not(:checked) > label:before {
+    color: #fff;
+    content: '★ ';
+}
+
+/* for when the rating is checked */
+.scale > input:checked ~ label {
+    color: #fe9500;
 }
 
 input[type="radio"]:checked:before {

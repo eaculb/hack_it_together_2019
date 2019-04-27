@@ -52,11 +52,11 @@
 					</div>
 				</div>
 
-				<fieldset class="scale" id="set-1">
+				<div class="scale" id="set-1">
 					{% for i in range(1, 11) %}
-						<input type="radio" name="set-1" id="question-{{ i }}"><label for="question-{{ i }}"> {{ i }} </label>
+						<input type="radio" name="scale" id="star-{{ i }}" value="{{ i }}"><label for="star-{{ i }}"> {{ i }} </label>
 					{% endfor %}
-				</fieldset>
+				</div>
 
 				<fieldset class="pt-2" id="set-2">
 					<h4> Overall, were you satisfied with this flight service? </h4>
