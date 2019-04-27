@@ -80,8 +80,11 @@ def feedback():
 
 	for person in staff_res:
 		staff.append(person)
+
+	# Passes the JSON file with the list of in-flight items to feedback.html	
+	data = json.load(open('static/custSurvey.json'))
 		
-	return render_template('feedback.html', staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
+	return render_template('feedback.html', data=data, staffmembers = staff, name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 @app.route('/submit-feedback', methods=['POST'])
 def submit_feedback():
