@@ -42,7 +42,7 @@
 		<div class="jumbotron pt-4 ">
 			<h1 class="mb-3"> Customer Satisfaction Survey</h1>
 
-			<form class="customer-satisfaction-survey" action="{{url_for('submit_feedback')}}" method="POST">
+			<form class="customer-satisfaction-survey" action="{{url_for('submit_feedback')}}" method="POST" onSubmit="alert('Your feedback is very much appreciated, {{ name }}. Thank you!')">
 				<div class="rating-scale">
 					<h4>  How likely are you to travel with JetBlue again? </h4>
 
@@ -52,98 +52,47 @@
 					</div>
 				</div>
 
-				<div class="scale">
-					<label><input type="radio" name="rad"/>
-						<span>1</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>2</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>3</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>4</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>5</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>6</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>7</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>8</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>9</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>10</span>
-					</label>
-				</div>
+				<fieldset class="scale" id="set-1">
+					{% for i in range(1, 11) %}
+						<input type="radio" name="set-1" id="question-{{ i }}"><label for="question-{{ i }}"> {{ i }} </label>
+					{% endfor %}
+				</fieldset>
 
-				<div class="general-question pt-2">
+				<fieldset class="pt-2" id="set-2">
 					<h4> Overall, were you satisfied with this flight service? </h4>
+					
+					{% for values in data["set-2"] %}
+						<input type="radio" name="set-2" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+					{% endfor %}
 
-					<label><input type="radio" name="rad"/>
-						<span>Very satisfied</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Somewhat satisfied</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Neutral</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Somewhat dissatisfied</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Very dissatisfied</span>
-					</label>
-				</div>
+				</fieldset>
 
-				<div class="general-question pt-2">
+				<fieldset class="pt-2" id="set-3">
 					<h4> Did you enjoy the inflight snacks provided to you? </h4>
+					
+					{% for values in data["set-3"] %}
+						<input type="radio" name="set-3" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+					{% endfor %}
 
-					<label><input type="radio" name="rad"/>
-						<span>Yes</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>No</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Did not have any</span>
-					</label>
-				</div>
+				</fieldset>
 
-				<div class="general-question pt-2">
+				<fieldset class="pt-2" id="crewmembers-rating">
 					<h4> Were the crew members friendly? </h4>
 
-					<label><input type="radio" name="rad"/>
-						<span>Yes</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>No</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Neutral</span>
-					</label>
-					<label><input type="radio" name="rad"/>
-						<span>Did not get a chance to interact with them</span>
-					</label>
-				</div>
+					{% for values in data["set-4"] %}
+						<input type="radio" name="set-4" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+					{% endfor %}
 
-				<div class="general-question pt-2 pb-3">
+				</fieldset>
+
+				<fieldset class=" t-2 pb-3" id="general-question" required>
 					<h4> Any other comments, questions, or concerns? </h4>
 
 					<textarea name="textarea" style = "width: 100%; height:150px;" placeholder="Describe your comments here ..."></textarea> 
-				</div>
+				</fieldset>
 
 				<div class="button-wrapper mt-4">
-					<button class="request-help-submit" name="submit" id="submit-modal" data-toggle="modal" data-target="#confirmation-modal" type="submit" onclick="alert('Your feedback is very much appreciated, {{ name }}. Thank you!')">Submit Feedback</button>
+					<button class="request-help-submit" name="submit" id="submit-modal" data-toggle="modal" data-target="#confirmation-modal" type="submit">Submit Feedback</button>
 				</div> {# end of button-wrapper #}
 
 			</form>
