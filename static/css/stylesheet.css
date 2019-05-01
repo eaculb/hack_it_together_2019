@@ -164,22 +164,21 @@ label.form-check-label, .modal-body {
 	font-size: 18px;
 }
 
-.text-rating-left {
-	float: left;
-}
-
 .text-rating-right {
 	float: right;
 }
 
 .likely-rating {
-	display: flow-root;
+	display: contents;
+}
+
+#set-2, #set-3, #crewmembers-rating, #general-question {
+    text-align: center;
+    font-size: 18px;
 }
 
 .scale label {
-    padding: .3em 1em;
     font-weight:100;
-    width:2.59em;
     background: #004990;
     color: #fff;
 }
@@ -195,16 +194,20 @@ label.form-check-label, .modal-body {
 }
 
 .scale:not(:checked) > label {
+    float: right;
     overflow:hidden;
     cursor:pointer;
-    font-size:200%;
+    font-size:150%;
     line-height:1.2;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 /* shows stars */
 .scale:not(:checked) > label:before {
     color: #fff;
-    content: '★ ';
 }
 
 /* for when the rating is checked */
@@ -220,4 +223,9 @@ input[type="radio"]:checked:before {
 .customer-satisfaction-survey h4 {
 	color: #004990;
 	text-align: center;
+}
+
+label {
+	padding-left: 7px;
+	padding-right: 7px;
 }
