@@ -10,7 +10,21 @@ _* customer side of the app *_
   * HTML + Bootstrap 4
   * MongoDB
 
-### Post-Hackathon Updates:
+### Post-Hackathon:
+  * Updates' Goal: Finish what we started , increase funcitonality, and learn more
+  * Requirements:
+    - Python 3.7 + virtual environment
+    - Python libraries: flask, flask-pymongo, Flask-Bootstrap4, flask_mongoengine
+    ```
+    $ pip install requirements.txt
+    ```
+    - Files:
+      + `config.py`: 
+      ```
+      mongoDBURL = "MONGODB URL HERE"
+      flightID = "FLIGHT ID NUMBER HERE"
+      secretKey = "SECRET KEY HERE"
+      ```
 
 #### Homepage:
   * Minimalist
