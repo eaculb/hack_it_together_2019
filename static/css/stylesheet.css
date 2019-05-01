@@ -7,8 +7,6 @@ h6 {
 	font-family: din, sans-serif;
 }
 
-
-/** Present in welcome.html, index.html, team.html **/
 body {
 	background-image: url("../img/background.svg");
 	font-family: din;
@@ -205,12 +203,10 @@ label.form-check-label, .modal-body {
     padding-bottom: 3%;
 }
 
-/* shows stars */
 .scale:not(:checked) > label:before {
     color: #fff;
 }
 
-/* for when the rating is checked */
 .scale > input:checked ~ label {
     color: #fe9500;
 }
