@@ -102,7 +102,7 @@ h1 {
 	font-family: din, sans-serif;
 }
 
-.team-photos {
+.team-photos, .pilot-photo {
 	float: left;
 	height : 242px;
 	width : 242px;
@@ -228,4 +228,18 @@ input[type="radio"]:checked:before {
 label {
 	padding-left: 7px;
 	padding-right: 7px;
+}
+
+.pilot-details ul {
+	display: grid;
+	font-size: 18px;
+}
+
+.flight-info span {
+	display: block;
+	font-size: 18px;
+}
+
+.flight-details {
+	padding-left: 15px;
 }
