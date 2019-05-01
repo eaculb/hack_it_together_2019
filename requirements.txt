@@ -1,6 +1,4 @@
 flask
-requests
 flask-pymongo
 Flask-Bootstrap4
 flask_mongoengine
-config.py
