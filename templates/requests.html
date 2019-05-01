@@ -62,7 +62,7 @@
 							    {% for snack in data["snacks"] %}
 
 								    <div class="form-check form-check-inline snacks pb-3">
-									    <input class="form-check-input" type="checkbox" name="snack-{{loop.index}}" id="snack-{{loop.index}}" required> 
+									    <input class="form-check-input" type="checkbox" name="snack-{{loop.index}}" id="snack-{{loop.index}}"> 
 									    <label class="form-check-label" for="snack-{{loop.index}}">{{snack}}</label>
 									</div>
 								{% endfor %}
@@ -87,7 +87,7 @@
 							    {# DRINKS LIST: #}
 							    {% for drink in data["drinks"]  %}
 								    <div class="form-check form-check-inline drinks pb-3">
-									    <input class="form-check-input" type="checkbox" name="drink-{{loop.index}}" id="drink-{{loop.index}}" required>  
+									    <input class="form-check-input" type="checkbox" name="drink-{{loop.index}}" id="drink-{{loop.index}}">  
 									    <label class="form-check-label" for="drink-{{loop.index}}">{{drink}}</label>
 									</div>
 								{% endfor %}
@@ -105,7 +105,7 @@
 
 				        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 						    <div class="card-body">
-						        <fieldset class="request dropdown mt-3 mb-4" required>
+						        <fieldset class="request dropdown mt-3 mb-4">
 				    
 				    			{# The name and id attributes in the input tag will allow for the form to identify each of checkboxes as individual responses to process them #}
 
