@@ -20,7 +20,7 @@
 	{% endblock javascript %}
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
-    	<img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt="">
+    	<a href="{{url_for('welcome')}}"><img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt=""></a>
     	<a class="navbar-brand">How are we doing, {{name}}?</a>
     	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
 		    <span class="navbar-toggler-icon"></span>
