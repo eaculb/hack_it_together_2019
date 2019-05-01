@@ -1,0 +1,86 @@
+{% extends "bootstrap/base.html" %} 
+
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block head %}
+	<title>Satisfaction Survery</title>
+
+	{% block styles %}
+	{{ super() }}
+	<link href="{{url_for('static',filename='css/stylesheet.css')}}" rel="stylesheet">
+
+	{% endblock styles %} 
+{% endblock head %}
+
+{% block body %}
+{{ super() }}
+	
+	{% block javascript %}
+	<script src="{{url_for('static', filename='scripts.js')}}"></script>
+	{% endblock javascript %}
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
+    	<a href="{{url_for('welcome')}}"><img src="{{url_for('static',filename='img/Jetblue.jpg')}}" width="80" height="80" class="d-inline-block align-top" alt=""></a>
+    	<a class="navbar-brand">How are we doing, {{name}}?</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+
+    	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    		<ul class="navbar-nav ml-auto">
+				<a class="nav-link" href="{{url_for('welcome')}}">Home</a>
+				<a class="nav-link current-page" href="#">Flight Info</a>
+				<a class="nav-link" href="{{url_for('team')}}">Meet the Team</a>
+				<a class="nav-link" href="{{url_for('feedback')}}">Give Feedback</a>
+				<a class="nav-link" href="{{url_for('requests')}}">Request Assistance </a>
+				
+    		</ul>
+    	</div>
+    </nav>	
+
+	<main role="main" class="container feedback-page mt-5">
+		<div class="jumbotron pt-4 ">
+			<h1 class="mb-3"> Flight Info </h1>
+
+			<div class = "container flight-info pt-4 pb-4">
+				<div class="flight-details">
+					<span class="pb-3"> Flight number: {{ flightid }} </span>
+					<span class="pb-3"> Seat number: {{ seat }} </span>
+					<span class="pb-3"> Destination: {{ destination }} </span>
+					<span class="pb-3"> Estimated arrival time: {{ arrivaltime }} </span>
+				</div>
+
+				<div class = "container team-info pt-2 pb-4">
+				<!-- Photo of Pilot:-->
+				<h3> Your pilot </h3>
+
+				{% for staff in staffmembers %}
+					{% if staff.role == "pilot" %}
+				   		<img class="pilot-photo rounded" src = {{staff.photourl}} alt = "Pilot Photo">
+
+					    <div class="pilot-details">
+						    <!--Rest of the Information-->
+						    <ul> Name: {{staff.name}} </ul>
+						    <ul> Role: {{staff.role}} </ul>
+						    <ul> Hometown: {{staff.hometown}} </ul>
+						    <ul> Languages: 
+						        {%for language in staff.languages%}
+						        	{% if language == staff.languages[-1] %}
+						        		<span> {{language}} </span>
+						        	{% else %}
+						        		<span> {{language}}, </span>
+						        	{% endif %}
+						        {%endfor%}
+						    </ul>
+						    <ul> Fun fact about {{staff.name}}: {{staff.funfact}} </ul>
+						</div>
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<p class="footer"> Powered by jetBlue &nbsp; | &nbsp; <a href="#">To the top</a></p>
+{% endblock %}
