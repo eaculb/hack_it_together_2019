@@ -72,6 +72,7 @@ def submit_request():
 
     return redirect(url_for('welcome'))
 
+# Feedback page
 @app.route('/feedback')
 def feedback():
 	# Pull all the staffs that have the current flightid
@@ -91,6 +92,16 @@ def submit_feedback():
     formdata = request.form
 
     return redirect(url_for('welcome'))
+
+# Flight info page
+@app.route('/flight-info')
+def flight_info():
+	staff_res = (mongo.db.staff.find({"flightid": ObjectId(session['flightid'])}))
+	staff = []
+	for person in staff_res:
+		staff.append(person)
+
+	return render_template('flight.html', staffmembers = staff, staff_member = 'Lizzie',name = session['passenger']['name']['first'], seat = session['passenger']['seat'])
 
 if __name__ == '__main__':
     app.config["SECRET_KEY"] = config.secretKey
