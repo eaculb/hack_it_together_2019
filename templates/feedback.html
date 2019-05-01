@@ -46,23 +46,23 @@
 				<div class="rating-scale">
 					<h4>  How likely are you to travel with JetBlue again? </h4>
 
-					<div class="likely-rating">
-						<p class="text-rating-left">NOT AT ALL LIKELY</p>
-						<p class="text-rating-right">EXTREMELY LIKELY</p>
+					<div class="likely-rating mb-2">
+						<span class="text-rating-left">NOT AT ALL LIKELY</span>
+						<span class="text-rating-right">EXTREMELY LIKELY</span>
 					</div>
-				</div>
 
-				<div class="scale" id="set-1">
-					{% for i in range(1, 11) %}
-						<input type="radio" name="scale" id="star-{{ i }}" value="{{ i }}"><label for="star-{{ i }}"> {{ i }} </label>
-					{% endfor %}
+					<fieldset class="scale pt-3">
+						{% for i in range(10, 0, -1) %}
+							<input type="radio" name="scale" id="star-{{ i }}" value="{{ i }}"><label for="star-{{ i }}"> {{ i }} </label>
+						{% endfor %}
+					</fieldset>
 				</div>
 
 				<fieldset class="pt-2" id="set-2">
 					<h4> Overall, were you satisfied with this flight service? </h4>
 					
 					{% for values in data["set-2"] %}
-						<input type="radio" name="set-2" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+						<input type="radio" name="set-2" id="answer-{{loop.index}}" required><label for="answer-{{loop.index}}"> {{ values }} </label>
 					{% endfor %}
 
 				</fieldset>
@@ -71,7 +71,7 @@
 					<h4> Did you enjoy the inflight snacks provided to you? </h4>
 					
 					{% for values in data["set-3"] %}
-						<input type="radio" name="set-3" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+						<input type="radio" name="set-3" id="answer-{{loop.index}}" required><label for="answer-{{loop.index}}"> {{ values }} </label>
 					{% endfor %}
 
 				</fieldset>
@@ -80,13 +80,13 @@
 					<h4> Were the crew members friendly? </h4>
 
 					{% for values in data["set-4"] %}
-						<input type="radio" name="set-4" id="question-{{loop.index}}" required><label for="question-{{loop.index}}"> {{ values }} </label>
+						<input type="radio" name="set-4" id="answer-{{loop.index}}" required><label for="answer-{{loop.index}}"> {{ values }} </label>
 					{% endfor %}
 
 				</fieldset>
 
-				<fieldset class=" t-2 pb-3" id="general-question" required>
-					<h4> Any other comments, questions, or concerns? </h4>
+				<fieldset class="pt-1 pb-3" id="general-question" required>
+					<h4 class="pb-2"> Any other comments, questions, or concerns? </h4>
 
 					<textarea name="textarea" style = "width: 100%; height:150px;" placeholder="Describe your comments here ..."></textarea> 
 				</fieldset>
@@ -94,7 +94,6 @@
 				<div class="button-wrapper mt-4">
 					<button class="request-help-submit" name="submit" id="submit-modal" data-toggle="modal" data-target="#confirmation-modal" type="submit">Submit Feedback</button>
 				</div> {# end of button-wrapper #}
-
 			</form>
 		</div>
 	</main>
