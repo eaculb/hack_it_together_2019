@@ -3,4 +3,4 @@ personal/*
 __pycache__/
 *.pyc
 config.py
-
+.DS_Store
