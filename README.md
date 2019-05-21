@@ -16,7 +16,7 @@ _* customer side of the app *_
     - Python 3.7 + virtual environment
     - Python libraries: flask, flask-pymongo, Flask-Bootstrap4, flask_mongoengine
     ```
-    $ pip install requirements.txt
+    $ pip install -r requirements.txt
     ```
     - Files:
       + `config.py`: 
