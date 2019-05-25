@@ -20,14 +20,21 @@ function isEmptySubmition(name, seat) {
 	}
 
 	// checks to see if client requested something else
-	if(document.getElementById("other-request").length != 0) {
+	if(document.getElementById("other-request").value.length != 0) {
 		selected = true;
 	}
 
-
+	// if there was a selection made, confirm submission
 	if(selected == true) {
-		alert("Your request has been submitted, " + name + " ! \nSomeone will be \
-			over in seat " + seat + " soon!");
+		var crewmember = document.getElementById("helper").value;
+
+		// for readability purposes
+		if(crewmember == "AnyMember") {
+			crewmember = "Someone";
+		}
+
+		alert("Your request has been submitted, " + name + "! \n" +
+			crewmember + " will be over in seat " + seat + " soon!");
 	}
 	else {
 		alert("You are trying to submit an empty form. Please make a selection.");
