@@ -191,8 +191,12 @@ label.form-check-label, .modal-body {
     clip:rect(0,0,0,0);
 }
 
+.scale.pt-3 {
+	margin: 0 auto;
+	text-align: center;
+}
+
 .scale:not(:checked) > label {
-    float: right;
     overflow:hidden;
     cursor:pointer;
     font-size:150%;
