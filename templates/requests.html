@@ -13,6 +13,12 @@
 
 	{% block javascripts %}
 	<script type="text/javascript" src="{{url_for('static', filename='scripts.js')}}"></script>
+
+	{# parses the variables name and seat # to be sent as parameters in the form #}
+	<script type="text/javascript">
+	var username = {{ name|tojson  }};
+	var seatnum = {{ seat|tojson }};
+	</script>
 	{% endblock javascripts %}
 {% endblock head %}
 
@@ -41,7 +47,7 @@
 	<main role="main" class="container request-page mt-5">
 		<div class="jumbotron pt-4 ">
 			<h1 class="mb-3"> Make a Request </h1>
-		    <form id="request_form" action="{{url_for('submit_request')}}" method="POST" onSubmit="return isEmptySubmition({{name}}, {{seat}})" >		    	
+		    <form id="request_form" action="{{url_for('submit_request')}}" method="POST" onSubmit="return isEmptySubmition(username, seatnum)" >		    	
 		    	<div id="accordion" class="accordion mb-4">
 
 		    		{# --------- CARD #1: REQUEST SNACKS  --------- #}
@@ -143,12 +149,12 @@
 
 				<div class="form-select-helper">
 					<span class="request-helper"> Request Assistance From: </span>
-					<select name="helper">
+					<select name="helper" id="helper">
 						<option value="AnyMember"> Any Crew Member</option>
 
 						{% for staff in staffmembers %}
 							{% if staff.role != "pilot" %}
-						<option value="{{ staff }}"> {{staff.name}} </option>	
+						<option value="{{ staff.name }}"> {{staff.name}} </option>	
 							{% endif %}
 						{% endfor %}
 					</select>
